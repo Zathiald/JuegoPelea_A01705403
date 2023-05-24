@@ -14,5 +14,9 @@ El turno del juego consiste en que el jugador primero crea su personaje, dandole
 Si el contrincante defendio el ataque, entonces no se le baja vida, si ataco de vuelta ha tanto el jugador como el contrincante se le baja una mitad de la fuerza del ataque que usaron, por ejemplo si el jugador uso un ataque con fuerza 10 y el contrincante un ataque con fuerza 15, entonces el jugador perdera 7.5 de vida y el contrincante 5.
 
 Esta misma ideología se aplica cuando el contrincante ataca, pero en este caso el jugador podra escoger entre defenderse o atacar de vuelta, dando así una sensación de riesgo y gananza.
+
+# Casos en donde causa error el código
+
+Por ahora se causa error en el codigo cuando en el momento de atacar se selecciona una tecla que no sea A o D, también hay que notar que por ahora las variables no estan siendo cargadas a través de cada función, esto por la falta de apuntadores, los cuáles seran agregados en la siguiente entrega.
  
  
