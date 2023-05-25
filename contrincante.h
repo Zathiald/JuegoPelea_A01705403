@@ -8,15 +8,15 @@
 using namespace std;
 
 class Contrincante {
-private:
-	Jugador jugador;
+
 public:
-	void atacarJugador(string decision, int aJ, float fuerza1Cont, float fuerza2Cont, float vidaCont, Jugador jugador);
-	void atacarJugador(string decision, int aJ, float fuerza1Cont, float fuerza2Cont, float fuerza3Cont, float vidaCont, Jugador jugador);
-	void atacarJugador(string decision, int aJ, float fuerza1Cont, float fuerza2Cont, float fuerza3Cont, float fuerza4Cont, float vidaCont, Jugador jugador);
+	Jugador jugador;
+	void atacarJugador(string decision, int aJ, float fuerza1Cont, float fuerza2Cont, float vidaCont);
+	void atacarJugador(string decision, int aJ, float fuerza1Cont, float fuerza2Cont, float fuerza3Cont, float vidaCont);
+	void atacarJugador(string decision, int aJ, float fuerza1Cont, float fuerza2Cont, float fuerza3Cont, float fuerza4Cont, float vidaCont);
 };
 
-void Contrincante::atacarJugador(string decision, int aJ, float fuerza1Cont, float fuerza2Cont, float vidaCont, Jugador jugador) {
+void Contrincante::atacarJugador(string decision, int aJ, float fuerza1Cont, float fuerza2Cont, float vidaCont) {
 	int turnoContrincante, defensaChance, contrincanteAtaque, ataqueChance;
 	turnoContrincante = rand() % 2;
 	defensaChance = rand() % 3;
@@ -140,7 +140,7 @@ void Contrincante::atacarJugador(string decision, int aJ, float fuerza1Cont, flo
 }
 
 
-void Contrincante::atacarJugador(string decision, int aJ, float fuerza1Cont, float fuerza2Cont, float fuerza3Cont,float vidaCont, Jugador jugador) {
+void Contrincante::atacarJugador(string decision, int aJ, float fuerza1Cont, float fuerza2Cont, float fuerza3Cont,float vidaCont) {
 	int turnoContrincante, defensaChance, contrincanteAtaque, ataqueChance;
 	turnoContrincante = rand() % 2;
 	defensaChance = rand() % 3;
@@ -293,7 +293,7 @@ void Contrincante::atacarJugador(string decision, int aJ, float fuerza1Cont, flo
 	}
 }
 
-void Contrincante::atacarJugador(string decision, int aJ, float fuerza1Cont, float fuerza2Cont, float fuerza3Cont, float fuerza4Cont, float vidaCont, Jugador jugador) {
+void Contrincante::atacarJugador(string decision, int aJ, float fuerza1Cont, float fuerza2Cont, float fuerza3Cont, float fuerza4Cont, float vidaCont) {
 	int turnoContrincante, defensaChance, contrincanteAtaque, ataqueChance;
 	turnoContrincante = rand() % 2;
 	defensaChance = rand() % 3;
@@ -491,7 +491,7 @@ class Bowser : public Contrincante {
 		void setvidaBowser(float vida_Bowser);
 		void setfuerzabolaFuego(float fuerza_Bola);
 		void setfuerzaCola(float fuerza_Cola);
-		void atacarJugador(string decision, int aJ, float fuerza1Cont, float fuerza2Cont, float vidaCont, Jugador jugador);
+		void atacarJugador(string decision, int aJ, float fuerza1Cont, float fuerza2Cont, float vidaCont);
 };
 
 void Bowser::setvidaBowser(float vida_Bowser) {
@@ -507,7 +507,7 @@ void Bowser::setfuerzaCola(float fuerza_Cola) {
 }
 
 
-void Bowser::atacarJugador(string decision, int aJ, float fuerza1Cont, float fuerza2Cont, float vidaCont, Jugador jugador) {
+void Bowser::atacarJugador(string decision, int aJ, float fuerza1Cont, float fuerza2Cont, float vidaCont) {
 	string nombreJug;
 	int turnoContrincante, defensaChance, contrincanteAtaque,ataqueChance;
 	nombreJug = jugador.getnombreJug();
@@ -663,7 +663,7 @@ public:
 	void setfuerzawarlockPunch(float fuerza_Warlock);
 	void setfuerzaflameChoke(float fuerza_Flame);
 	void setfuerzavolcanoKick(float fuerza_Volcano);
-	void atacarJugador(string decision, int aJ, float fuerza1Cont, float fuerza2Cont, float fuerza3Cont, float vidaCont, Jugador jugador);
+	void atacarJugador(string decision, int aJ, float fuerza1Cont, float fuerza2Cont, float fuerza3Cont, float vidaCont);
 };
 
 void Ganondorf::setvidaGanondorf(float vida_Ganon) {
@@ -682,7 +682,7 @@ void Ganondorf::setfuerzavolcanoKick(float fuerza_Volcano) {
 	fuerzavolcanoKick= fuerza_Volcano;
 }
 
-void Ganondorf::atacarJugador(string decision, int aJ, float fuerza1Cont, float fuerza2Cont, float fuerza3Cont, float vidaCont, Jugador jugador) {
+void Ganondorf::atacarJugador(string decision, int aJ, float fuerza1Cont, float fuerza2Cont, float fuerza3Cont, float vidaCont) {
 	string nombreJug;
 	nombreJug = jugador.getnombreJug();
 	int turnoContrincante, defensaChance, contrincanteAtaque, ataqueChance;
@@ -879,7 +879,7 @@ public:
 	void setfuerzashadowFlare(float fuerza_Shadow);
 	void setfuerzaOctaslash(float fuerza_Octaslash);
 	void setfuerzasuperNova(float fuerza_Nova);
-	void atacarJugador(string decision, int aJ, float fuerza1Cont, float fuerza2Cont, float fuerza3Cont, float fuerza4Cont, float vidaCont, Jugador jugador);
+	void atacarJugador(string decision, int aJ, float fuerza1Cont, float fuerza2Cont, float fuerza3Cont, float fuerza4Cont, float vidaCont);
 };
 
 void Sephiroth::setvidaSephiroth(float vida_Sephiroth) {
@@ -902,7 +902,7 @@ void Sephiroth::setfuerzasuperNova(float fuerza_Nova) {
 	fuerzasuperNova = fuerza_Nova;
 }
 
-void Sephiroth::atacarJugador(string decision, int aJ, float fuerza1Cont, float fuerza2Cont, float fuerza3Cont, float fuerza4Cont, float vidaCont, Jugador jugador) {
+void Sephiroth::atacarJugador(string decision, int aJ, float fuerza1Cont, float fuerza2Cont, float fuerza3Cont, float fuerza4Cont, float vidaCont) {
 	string nombreJug;
 	nombreJug = jugador.getnombreJug();
 	int turnoContrincante, defensaChance, contrincanteAtaque, ataqueChance;

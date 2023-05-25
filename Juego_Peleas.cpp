@@ -56,7 +56,6 @@ void subirNivel() {
 }
 
 void turnoJugador() {
-    while (jugador.getvidaJug() > 0) {
         string nombreJug;
         int opcionAtaque,ac;
         float vidaCont,vidaJug, fuerza1, fuerza2, fuerza1Cont, fuerza2Cont;
@@ -75,22 +74,11 @@ void turnoJugador() {
             cout << "Escoge una opcion correcta" << endl;
             turnoJugador();
         }
-        ac = rand() % 1;
-        if (ac == 0) {
-            if (opcionAtaque == 1) {
-                jugador.atacarContrincante(vidaCont, vidaJug, fuerza1Cont, fuerza1);
-            }
-            else if (opcionAtaque == 2) {
-                jugador.atacarContrincante(vidaCont, vidaJug, fuerza2Cont, fuerza2);
-            }
+        if (opcionAtaque == 1) {
+            jugador.atacarContrincante(vidaCont, vidaJug, fuerza1Cont, fuerza1);
         }
-        if (ac == 1) {
-            if (opcionAtaque == 1) {
-                jugador.atacarContrincante(vidaCont, vidaJug, fuerza1Cont, fuerza1);
-            }
-            else if (opcionAtaque == 2) {
-                jugador.atacarContrincante(vidaCont, vidaJug, fuerza2Cont, fuerza2);
-            }
+        else if (opcionAtaque == 2) {
+            jugador.atacarContrincante(vidaCont, vidaJug, fuerza2Cont, fuerza2);
         }
         if (vidaCont <= 0) {
             cout << nombreJug <<"HA VENCIDO A SU CONTRINCANTE, PASAAA A LA SEGUNDA PELEA ESTELAR" << endl;
@@ -99,11 +87,9 @@ void turnoJugador() {
         if (jugador.getvidaJug() <= 0) {
             cout << nombreJug << "ESTA FUERAAAAAAA, SE ACABO" << endl;
         }
-    }
 }
 
 void turnoContrincante() {
-    while (jugador.getvidaJug() == 0) {
         string nombreJug;
         float vidaCont, vidaJug, fuerza1, fuerza2, fuerza1Cont, fuerza2Cont;
         vidaCont = 10.0;
@@ -125,7 +111,7 @@ void turnoContrincante() {
         if (decision == "D") {
             int aj;
             aj = rand() % 1;
-            contrincante.atacarJugador("D", aj, fuerza1Cont, fuerza2Cont, vidaCont, jugador);
+            contrincante.atacarJugador("D", aj, fuerza1Cont, fuerza2Cont, vidaCont);
         }
         if (decision == "A") {
             int aj;
@@ -134,10 +120,10 @@ void turnoContrincante() {
             cout << "2: " << jugador.getnombreAtaque2() << endl;
             cin >> aj;
             if (aj == 1) {
-                contrincante.atacarJugador("A", 1, fuerza1Cont, fuerza2Cont, vidaCont, jugador);
+                contrincante.atacarJugador("A", 1, fuerza1Cont, fuerza2Cont, vidaCont);
             }
             if (aj == 2) {
-                contrincante.atacarJugador("A", 2, fuerza1Cont, fuerza2Cont, vidaCont, jugador);
+                contrincante.atacarJugador("A", 2, fuerza1Cont, fuerza2Cont, vidaCont);
             }
         }
         if (vidaCont <= 0) {
@@ -148,8 +134,6 @@ void turnoContrincante() {
         if (jugador.getvidaJug() <= 0) {
             cout << nombreJug << "ESTA FUERAAAAAAA, SE ACABO" << endl;
         }
-
-    }
 }
 
 void pelea() {
@@ -157,8 +141,10 @@ void pelea() {
     cout << "Ahora de la esquina izquierda tenemos a " << jugador.getnombreJug() << endl;
     cout << "Yyy de la esquina derecha tenemos a contrincante" << endl;
     cout << "Pelearan para ver quien es el mejor y.... PELIEN" << endl;
-    turnoJugador();
-    turnoContrincante();
+    while (jugador.getvidaJug() > 0) {
+        turnoJugador();
+        turnoContrincante();
+    }
 }
 
 int main()
