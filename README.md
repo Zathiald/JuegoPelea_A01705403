@@ -21,5 +21,8 @@ Esta misma ideología se aplica cuando el contrincante ataca, pero en este caso 
 Por ahora se causa error en el codigo cuando en el momento de atacar se selecciona una tecla que no sea A o D, también hay que notar que por ahora las variables no estan siendo cargadas a través de cada función, esto por la falta de apuntadores, los cuáles seran agregados en el Avance 3.
 
 El código por ahora esta tomando datos ejemplo que no son iguales a los valores de las clases herencia de Contrincante,esto será ya ajustado para el Avance 3.
+
+### 24/05/23 (Avance 2) (Revisión 2):
+Después de alterar unos datos, ya se van guardando los datos de la clase de Jugador, aún falta el alterar otros datos y guardar otros, también hay que ver el poder guardar los cambios y analizar el factor random, porque parece ser va fallando.
  
  
