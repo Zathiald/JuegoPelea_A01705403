@@ -24,5 +24,9 @@ El código por ahora esta tomando datos ejemplo que no son iguales a los valores
 
 ### 24/05/23 (Avance 2) (Revisión 2):
 Después de alterar unos datos, ya se van guardando los datos de la clase de Jugador, aún falta el alterar otros datos y guardar otros, también hay que ver el poder guardar los cambios y analizar el factor random, porque parece ser va fallando.
+
+### 24/05/23 (Avance 2) (Revisión 3):
+El factor random ya fue controlado más, bajando la probabilidad de fallo a 25% en vez de 50%, los datos que salen al pelear son todos diferentes por el hecho de que aun no tenemos el constructor de los enemigos creado para cada Round, pero eso se hará en el Avance 3.
+
  
  
