@@ -17,7 +17,7 @@ Esta misma ideología se aplica cuando el contrincante ataca, pero en este caso 
 
 # Casos en donde causa error el código
 
-24/05/23 (Avance 2):
+### 24/05/23 (Avance 2):
 Por ahora se causa error en el codigo cuando en el momento de atacar se selecciona una tecla que no sea A o D, también hay que notar que por ahora las variables no estan siendo cargadas a través de cada función, esto por la falta de apuntadores, los cuáles seran agregados en el Avance 3.
 
 El código por ahora esta tomando datos ejemplo que no son iguales a los valores de las clases herencia de Contrincante,esto será ya ajustado para el Avance 3.
