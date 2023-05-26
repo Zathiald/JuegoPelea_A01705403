@@ -1,3 +1,6 @@
+//Creación de la clase de Contrincante,Bowser,Ganondorf y Sephiroth usado para almacenar todos los datos relacionados a estas clases
+//Creación: 20/05/23
+
 #ifndef CONTRINCANTE_H
 #define CONTRINCANTE_H
 
@@ -138,7 +141,6 @@ void Contrincante::atacarJugador(string decision, int aJ, float fuerza1Cont, flo
 		}
 	}
 }
-
 
 void Contrincante::atacarJugador(string decision, int aJ, float fuerza1Cont, float fuerza2Cont, float fuerza3Cont,float vidaCont) {
 	int turnoContrincante, defensaChance, contrincanteAtaque, ataqueChance;
@@ -492,6 +494,7 @@ class Bowser : public Contrincante {
 		void setfuerzabolaFuego(float fuerza_Bola);
 		void setfuerzaCola(float fuerza_Cola);
 		void atacarJugador(string decision, int aJ, float fuerza1Cont, float fuerza2Cont, float vidaCont);
+		Bowser() :vidaBowser(30.0), fuerzabolaFuego(20.0), fuerzaCola(15.0) {};
 };
 
 void Bowser::setvidaBowser(float vida_Bowser) {
@@ -664,6 +667,7 @@ public:
 	void setfuerzaflameChoke(float fuerza_Flame);
 	void setfuerzavolcanoKick(float fuerza_Volcano);
 	void atacarJugador(string decision, int aJ, float fuerza1Cont, float fuerza2Cont, float fuerza3Cont, float vidaCont);
+	Ganondorf() :vidaGanondorf(40.0), fuerzawarlockPunch(15.0), fuerzaflameChoke(10.0), fuerzavolcanoKick(25.0) {};
 };
 
 void Ganondorf::setvidaGanondorf(float vida_Ganon) {
@@ -880,6 +884,7 @@ public:
 	void setfuerzaOctaslash(float fuerza_Octaslash);
 	void setfuerzasuperNova(float fuerza_Nova);
 	void atacarJugador(string decision, int aJ, float fuerza1Cont, float fuerza2Cont, float fuerza3Cont, float fuerza4Cont, float vidaCont);
+	Sephiroth() :vidaSephiroth(60.0), fuerzaMasamune(15.0), fuerzashadowFlare(13.0), fuerzaOctaslash(22.0), fuerzasuperNova(40.0) {};
 };
 
 void Sephiroth::setvidaSephiroth(float vida_Sephiroth) {
