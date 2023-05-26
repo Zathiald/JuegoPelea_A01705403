@@ -29,7 +29,7 @@ Después de alterar unos datos, ya se van guardando los datos de la clase de Jug
 El factor random ya fue controlado más, bajando la probabilidad de fallo a 25% en vez de 50%, los datos que salen al pelear son todos diferentes por el hecho de que aun no tenemos el constructor de los enemigos creado para cada Round, pero eso se hará en el Avance 3.
 
 ### 25/05/23 (Avance 2) (Revisión 4):
-Solo se agregaron comentarios al archivo de "jugador.h", por ahora solo se tiene la sobrecarga y sobreescritura definidas en el archivo de "contrincante.h", aun hace falta el alterar las funciones de la clase, agregar constructores y agregar apuntadores para poder lograr que las variables se conecten correctamente, conceptos que se iran implementando en el avance 3, algo que notar es que en esta construcción actual del código, el ingresar una letra que no sea A o D en el turno del jugador, va a printear varias veces el mensaje de escoger la opción correcta y después ya te dejará escoger de nuevo entre A o D, para tener eso en mente y arreglarlo
+Solo se agregaron comentarios al archivo de "jugador.h", por ahora solo se tiene la sobrecarga y sobreescritura definidas en el archivo de "contrincante.h", aun hace falta el alterar las funciones de la clase para que en cada Round sea un contrincante diferente, agregar constructores y agregar apuntadores para poder lograr que las variables se conecten correctamente, conceptos que se iran implementando en el avance 3, algo que notar es que en esta construcción actual del código, el ingresar una letra que no sea A o D en el turno del jugador, va a printear varias veces el mensaje de escoger la opción correcta y después ya te dejará escoger de nuevo entre A o D, para tener eso en mente y arreglarlo
 
  
  
