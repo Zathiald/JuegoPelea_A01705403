@@ -63,7 +63,7 @@ class Jugador {
 		void setnombreJug(string nombreJugador);
 		void setnombreAtaque1(string nombreFuerza1);
 		void setnombreAtaque2(string nombreFuerza2);
-		void atacarContrincante(float fuerzaJug,float fuerzaCont, float vidaCont);
+		void atacarContrincante(float fuerzaJug,float fuerzaCont, float vidaCont,Jugador jugador);
 };
 
 
@@ -119,7 +119,7 @@ void Jugador::setnombreAtaque2(string nombreFuerza2) {
 //Funcion:Generar situaciones en donde se altere tanto la vida del jugador como la del contrincante 
 //Parametros: Se toman parametros de float de vida del jugador, vida del contrincante, fuerza del jugador y fuerza del contrincante
 //Retorno: Al ser una función void no se regresa algo en sí,en este caso se actualizan los valores de vida de tanto el jugador como del contrincante
-void Jugador::atacarContrincante(float fuerzaJug,float fuerzaCont, float vidaCont) {
+void Jugador::atacarContrincante(float fuerzaJug,float fuerzaCont, float vidaCont,Jugador jugador) {
 	int contrincanteAtaque, jugadorChance;
 	contrincanteAtaque = rand() % 2;
 	jugadorChance = rand() % 3;

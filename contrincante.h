@@ -19,7 +19,7 @@ public:
 	float fuerzaCont3;
 	float fuerzaCont4;
 	Jugador jugador;
-	virtual void atacarJugador(string decision, int aJ);
+	virtual void atacarJugador(string decision, int aJ,Jugador jugador);
 	Contrincante(){}
 	Contrincante(float vidaEnem, float fuerzaEnem1, float fuerzaEnem2);
 	Contrincante(float vidaEnem, float fuerzaEnem1, float fuerzaEnem2, float fuerzaEnem3);
@@ -47,7 +47,7 @@ Contrincante::Contrincante(float vidaEnem, float fuerzaEnem1, float fuerzaEnem2,
 	fuerzaCont4 = fuerzaEnem4;
 }
 
-void Contrincante::atacarJugador(string decision, int aJ) {
+void Contrincante::atacarJugador(string decision, int aJ,Jugador jugador) {
 	int turnoContrincante, defensaChance, contrincanteAtaque, ataqueChance;
 	turnoContrincante = rand() % 2;
 	defensaChance = rand() % 3;
