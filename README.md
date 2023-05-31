@@ -17,10 +17,10 @@ Esta misma ideología se aplica cuando el contrincante ataca, pero en este caso 
 
 # Casos en donde causa error el código
 
-## 25/05/03 (Avance 2) (Revisión 4)
+### 25/05/03 (Avance 2) (Revisión 4)
 Algo que notar es que en esta construcción actual del código, el ingresar una letra que no sea A o D en el turno del jugador, va a mostrar varias veces el mensaje de escoger la opción correcta y después ya te dejará escoger de nuevo entre A o D, para tener eso en mente y arreglarlo.
 
-## 30/05/23 (Avance 3) (Revisión 1)
+### 30/05/23 (Avance 3) (Revisión 1)
 En esta construcción actual del código, lo que sucede es que al ingresar una opción de ataque que no sea 1 o 2, se genera un ciclo infinito donde dice que se escoga una opción correcta, y también no se le baja la vida al enemigo, solo al usuario y al llegar a vida 0, no se termina el juego.
 
 # Historial de Revisiones
