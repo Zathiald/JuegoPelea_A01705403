@@ -56,70 +56,70 @@ class Jugador {
 		string getnombreAtaque2() { return nombreAtaque2; }
 
 
-		void setnivelJug(int nivel_Jug);
-		void setvidaJug(float vida_Jug);
-		void setfuerzaAtaque1(float fuerza_Ataque1);
-		void setfuerzaAtaque2(float fuerza_Ataque2);
-		void setnombreJug(string nombre_Jug);
-		void setnombreAtaque1(string nombre_Ataque1);
-		void setnombreAtaque2(string nombre_Ataque2);
-		void atacarContrincante(float vidaCont, float vidaJug, float fuerzaCont, float fuerzaJug);
+		void setnivelJug(int nivelJugador);
+		void setvidaJug(float vidaJugador);
+		void setfuerzaAtaque1(float fuerzaJugador1);
+		void setfuerzaAtaque2(float fuerzaJugador2);
+		void setnombreJug(string nombreJugador);
+		void setnombreAtaque1(string nombreFuerza1);
+		void setnombreAtaque2(string nombreFuerza2);
+		void atacarContrincante(float fuerzaJug,float fuerzaCont, float vidaCont);
 };
 
 
 //Funcion:Darle nuevo valor a la variable de nivel del jugador
 //Parametros: Se toma un parametro int para darle ese valor a la variable de nivel del jugador
 //Retorno: Al ser una función void no se regresa algo en sí,solo se actualiza el valor de la variable de nivel del jugador
-void Jugador::setnivelJug(int nivel_Jug) {
-	nivelJug = nivel_Jug;
+void Jugador::setnivelJug(int nivelJugador) {
+	nivelJug = nivelJugador;
 }
 
 //Funcion:Darle nuevo valor a la variable de la vida del jugador
 //Parametros: Se toma un parametro float para darle ese valor a la variable de vida del jugador
 //Retorno: Al ser una función void no se regresa algo en sí,solo se actualiza el valor de la variable de vida del jugador
-void Jugador::setvidaJug(float vida_Jug) {
-	vidaJug = vida_Jug;
+void Jugador::setvidaJug(float vidaJugador) {
+	vidaJug = vidaJugador;
 }
 
 //Funcion:Darle nuevo valor a la variable de fuerza del primer ataque del jugador
 //Parametros: Se toma un parametro float para darle ese valor a la variable de fuerza del primer ataque del jugador
 //Retorno: Al ser una función void no se regresa algo en sí,solo se actualiza el valor de la variable de fuerza del primer ataque del jugador
-void Jugador::setfuerzaAtaque1(float fuerza_Ataque1) {
-	fuerzaAtaque1 = fuerza_Ataque1;
+void Jugador::setfuerzaAtaque1(float fuerzaJugador1) {
+	fuerzaAtaque1 = fuerzaJugador1;
 }
 
 //Funcion:Darle nuevo valor a la variable de fuerza del segundo ataque del jugador
 //Parametros: Se toma un parametro float para darle ese valor a la variable de fuerza del segundo ataque del jugador
 //Retorno: Al ser una función void no se regresa algo en sí,solo se actualiza el valor de la variable de fuerza del segundo ataque del jugador
-void Jugador::setfuerzaAtaque2(float fuerza_Ataque2) {
-	fuerzaAtaque2 = fuerza_Ataque2;
+void Jugador::setfuerzaAtaque2(float fuerzaJugador2) {
+	fuerzaAtaque2 = fuerzaJugador2;
 }
 
 //Funcion:Darle nuevo valor a la variable del nombre del jugador
 //Parametros: Se toma un parametro string para darle ese valor a la variable de nombre del jugador
 //Retorno: Al ser una función void no se regresa algo en sí,solo se actualiza el valor de la variable de nombre del jugador
-void Jugador::setnombreJug(string nombre_Jug) {
-	nombreJug = nombre_Jug;
+void Jugador::setnombreJug(string nombreJugador) {
+	nombreJug = nombreJugador;
 }
 
 //Funcion:Darle nuevo valor a la variable del nombre del primer ataque del jugador
 //Parametros: Se toma un parametro string para darle ese valor a la variable del nombre del primer ataque del jugador
 //Retorno: Al ser una función void no se regresa algo en sí,solo se actualiza el valor de la variable del nombre del primer ataque del jugador
-void Jugador::setnombreAtaque1(string nombre_Ataque1) {
-	nombreAtaque1 = nombre_Ataque1;
+void Jugador::setnombreAtaque1(string nombreFuerza1) {
+	nombreAtaque1 = nombreFuerza1;
 }
 
 //Funcion:Darle nuevo valor a la variable del nombre del segundo ataque del jugador
 //Parametros: Se toma un parametro string para darle ese valor a la variable del nombre del segundo ataque del jugador
 //Retorno: Al ser una función void no se regresa algo en sí,solo se actualiza el valor de la variable del nombre del segundo ataque del jugador
-void Jugador::setnombreAtaque2(string nombre_Ataque2) {
-	nombreAtaque2 = nombre_Ataque2;
+void Jugador::setnombreAtaque2(string nombreFuerza2) {
+	nombreAtaque2 = nombreFuerza2;
 }
 
 //Funcion:Generar situaciones en donde se altere tanto la vida del jugador como la del contrincante 
 //Parametros: Se toman parametros de float de vida del jugador, vida del contrincante, fuerza del jugador y fuerza del contrincante
 //Retorno: Al ser una función void no se regresa algo en sí,en este caso se actualizan los valores de vida de tanto el jugador como del contrincante
-void Jugador::atacarContrincante(float vidaCont, float vidaJug, float fuerzaCont, float fuerzaJug) {
+void Jugador::atacarContrincante(float fuerzaJug,float fuerzaCont, float vidaCont) {
 	int contrincanteAtaque, jugadorChance;
 	contrincanteAtaque = rand() % 2;
 	jugadorChance = rand() % 3;
