@@ -17,6 +17,14 @@ Esta misma ideología se aplica cuando el contrincante ataca, pero en este caso 
 
 # Casos en donde causa error el código
 
+## 25/05/03 (Avance 2) (Revisión 4)
+Algo que notar es que en esta construcción actual del código, el ingresar una letra que no sea A o D en el turno del jugador, va a mostrar varias veces el mensaje de escoger la opción correcta y después ya te dejará escoger de nuevo entre A o D, para tener eso en mente y arreglarlo.
+
+## 30/05/23 (Avance 3) (Revisión 1)
+En esta construcción actual del código, lo que sucede es que al ingresar una opción de ataque que no sea 1 o 2, se genera un ciclo infinito donde dice que se escoga una opción correcta, y también no se le baja la vida al enemigo, solo al usuario y al llegar a vida 0, no se termina el juego.
+
+# Historial de Revisiones
+
 ### 24/05/23 (Avance 2) (Revisión 1):
 Por ahora se causa error en el codigo cuando en el momento de atacar se selecciona una tecla que no sea A o D, también hay que notar que por ahora las variables no estan siendo cargadas a través de cada función, esto por la falta de apuntadores, los cuáles seran agregados en el Avance 3.
 
@@ -30,9 +38,6 @@ El factor random ya fue controlado más, bajando la probabilidad de fallo a 25% 
 
 ### 25/05/23 (Avance 2) (Revisión 4):
 Solo se agregaron comentarios al archivo de "jugador.h", por ahora solo se tiene la sobrecarga y sobreescritura definidas en el archivo de "contrincante.h", aun hace falta el alterar las funciones de la clase para que en cada Round sea un contrincante diferente, agregar constructores y agregar apuntadores para poder lograr que las variables se conecten correctamente, conceptos que se iran implementando en el avance 3.
-
-FALLA EN EL CÓDIGO:
-Algo que notar es que en esta construcción actual del código, el ingresar una letra que no sea A o D en el turno del jugador, va a mostrar varias veces el mensaje de escoger la opción correcta y después ya te dejará escoger de nuevo entre A o D, para tener eso en mente y arreglarlo.
 
 ## 30/05/23 (Avance 3) (Revisión 1):
 En esta revisión se movieron por completo todas las clases herencias, tal como fue recomendado en los comentarios del avance, también modifique las funciones de atacarJugador para poder aún tener sobreescritura en ellos, pero ahora incluí constructores dentro de la clase de Contrincante, constructores que implementé en el archivo main, pero aún hay un factor que analizar en lo de la función de atacarContrincante, ya que ahí aún no he sido capaz de implementar poliformismo a través de los constructores, es algo que voy a tener que revisar.
