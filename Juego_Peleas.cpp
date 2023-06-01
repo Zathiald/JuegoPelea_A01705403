@@ -18,8 +18,9 @@ Contrincante* bowser= contrin[0] = new Bowser(30.0, 20.0, 15.0);
 
 
 void subirNivel();
-void turnoJugador();
 void turnoContrincante();
+int turnoJugador();
+int main();
 
 void subirNivel() {
     int nivel;
@@ -38,7 +39,7 @@ void subirNivel() {
     }
 }
 
-void turnoJugador() {
+int turnoJugador() {
     string nombreJug;
     int opcionAtaque, nivelJug;
     float  vidaJug, fuerza1, fuerza2;
@@ -47,6 +48,7 @@ void turnoJugador() {
     fuerza1 = jugador.getfuerzaAtaque1();
     fuerza2 = jugador.getfuerzaAtaque2();
     nivelJug = jugador.getnivelJug();
+
     if (nivelJug == 1) {
         float vidaBowser, fuerzaBola, fuerzaCola;
         int ataqueEnemigo;
@@ -64,23 +66,24 @@ void turnoJugador() {
         ataqueEnemigo = rand() % 1;
         if (opcionAtaque == 1) {
             if (ataqueEnemigo == 0) {
-                jugador.atacarContrincante(fuerza1, fuerzaBola, vidaBowser, jugador);
+                jugador.atacarContrincante1(fuerza1, fuerzaBola, vidaBowser, jugador);
             }
             else if (ataqueEnemigo == 1) {
-                jugador.atacarContrincante(fuerza1, fuerzaCola, vidaBowser, jugador);
+                jugador.atacarContrincante1(fuerza1, fuerzaCola, vidaBowser, jugador);
             }
         }
         else if (opcionAtaque == 2) {
             if (ataqueEnemigo == 0) {
-                jugador.atacarContrincante(fuerza2, fuerzaBola, vidaBowser, jugador);
+                jugador.atacarContrincante1(fuerza2, fuerzaBola, vidaBowser, jugador);
             }
             else if (ataqueEnemigo == 1) {
-                jugador.atacarContrincante(fuerza2, fuerzaCola, vidaBowser, jugador);
+                jugador.atacarContrincante1(fuerza2, fuerzaCola, vidaBowser, jugador);
             }
         }
         if (vidaBowser <= 0) {
             cout << nombreJug << " HA VENCIDO AL REEEY DE LOS KOOPAS, PASAAA A LA SEGUNDA PELEA ESTELAR" << endl;
             subirNivel();
+            main();
         }
     }
 
@@ -102,29 +105,30 @@ void turnoJugador() {
         ataqueEnemigo = rand() % 2;
         if (opcionAtaque == 1) {
             if (ataqueEnemigo == 1) {
-                jugador.atacarContrincante(fuerza1, fuerzaWarlock, vidaGanon, jugador);
+                jugador.atacarContrincante2(fuerza1, fuerzaWarlock, vidaGanon, jugador);
             }
             else if (ataqueEnemigo == 2) {
-                jugador.atacarContrincante(fuerza1, fuerzaFlame, vidaGanon, jugador);
+                jugador.atacarContrincante2(fuerza1, fuerzaFlame, vidaGanon, jugador);
             }
             else if (ataqueEnemigo == 3) {
-                jugador.atacarContrincante(fuerza1, fuerzaVolcano, vidaGanon, jugador);
+                jugador.atacarContrincante2(fuerza1, fuerzaVolcano, vidaGanon, jugador);
             }
         }
         else if (opcionAtaque == 2) {
             if (ataqueEnemigo == 1) {
-                jugador.atacarContrincante(fuerza2, fuerzaWarlock, vidaGanon, jugador);
+                jugador.atacarContrincante2(fuerza2, fuerzaWarlock, vidaGanon, jugador);
             }
             else if (ataqueEnemigo == 2) {
-                jugador.atacarContrincante(fuerza2, fuerzaFlame, vidaGanon, jugador);
+                jugador.atacarContrincante2(fuerza2, fuerzaFlame, vidaGanon, jugador);
             }
             else if (ataqueEnemigo == 3) {
-                jugador.atacarContrincante(fuerza2, fuerzaVolcano, vidaGanon, jugador);
+                jugador.atacarContrincante2(fuerza2, fuerzaVolcano, vidaGanon, jugador);
             }
         }
         if (vidaGanon <= 0) {
             cout << nombreJug << " HA VENCIDO AL REY DEMONIO, PASAAA A LA SEGUNDA PELEA ESTELAR" << endl;
             subirNivel();
+            main();
         }
     }
 
@@ -147,35 +151,37 @@ void turnoJugador() {
         ataqueEnemigo = rand() % 3;
         if (opcionAtaque == 1) {
             if (ataqueEnemigo == 1) {
-                jugador.atacarContrincante(fuerza1, fuerzaMasamune, vidaSephiroth, jugador);
+                jugador.atacarContrincante3(fuerza1, fuerzaMasamune, vidaSephiroth, jugador);
             }
             else if (ataqueEnemigo == 2) {
-                jugador.atacarContrincante(fuerza1, fuerzaShadow, vidaSephiroth, jugador);
+                jugador.atacarContrincante3(fuerza1, fuerzaShadow, vidaSephiroth, jugador);
             }
             else if (ataqueEnemigo == 3) {
-                jugador.atacarContrincante(fuerza1, fuerzaOctaslash, vidaSephiroth, jugador);
+                jugador.atacarContrincante3(fuerza1, fuerzaOctaslash, vidaSephiroth, jugador);
             }
             else if (ataqueEnemigo == 4) {
-                jugador.atacarContrincante(fuerza1, fuerzaNova, vidaSephiroth, jugador);
+                jugador.atacarContrincante3(fuerza1, fuerzaNova, vidaSephiroth, jugador);
             }
         }
         else if (opcionAtaque == 2) {
             if (ataqueEnemigo == 1) {
-                jugador.atacarContrincante(fuerza2, fuerzaMasamune, vidaSephiroth, jugador);
+                jugador.atacarContrincante3(fuerza2, fuerzaMasamune, vidaSephiroth, jugador);
             }
             else if (ataqueEnemigo == 2) {
-                jugador.atacarContrincante(fuerza2, fuerzaShadow, vidaSephiroth, jugador);
+                jugador.atacarContrincante3(fuerza2, fuerzaShadow, vidaSephiroth, jugador);
             }
             else if (ataqueEnemigo == 3) {
-                jugador.atacarContrincante(fuerza2, fuerzaOctaslash, vidaSephiroth, jugador);
+                jugador.atacarContrincante3(fuerza2, fuerzaOctaslash, vidaSephiroth, jugador);
             }
             else if (ataqueEnemigo == 4) {
-                jugador.atacarContrincante(fuerza2, fuerzaNova, vidaSephiroth, jugador);
+                jugador.atacarContrincante3(fuerza2, fuerzaNova, vidaSephiroth, jugador);
             }
 
         }
         if (vidaSephiroth <= 0) {
             cout << nombreJug << " HA VENCIDO AL ANGEL DE UN ALA,LO HA GANADO TODO DAMAS Y SEÑORES, " << nombreJug << " ES NUESTRO CAMPION" << endl;
+            cout << "ERES EL CAMPION" << endl;
+            return 0;
         }
     }
 }
@@ -219,6 +225,7 @@ void turnoContrincante() {
         if (vidaCont <= 0) {
             cout << nombreJug << " HA VENCIDO AL REEEY DE LOS KOOPAS, PASAAA A LA SEGUNDA PELEA ESTELAR" << endl;
             subirNivel();
+            main();
         }
     }
 
@@ -255,6 +262,7 @@ void turnoContrincante() {
         if (vidaCont <= 0) {
             cout << nombreJug << " HA VENCIDO AL REY DEMONIO, PASAAA A LA SEGUNDA PELEA ESTELAR" << endl;
             subirNivel();
+            main();
         }
     }
 
@@ -291,6 +299,7 @@ void turnoContrincante() {
         if (vidaCont <= 0) {
             cout << nombreJug << " HA VENCIDO AL ANGEL DE UN ALA,LO HA GANADO TODO DAMAS Y SEÑORES, " << nombreJug << " ES NUESTRO CAMPION" << endl;
             subirNivel();
+            main();
         }
     }
 }
