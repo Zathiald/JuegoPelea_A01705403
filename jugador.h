@@ -178,7 +178,7 @@ void Jugador::atacarContrincante2(float fuerzaJug, float fuerzaCont, float vidaC
 			vidaJug = vidaJug - (fuerzaCont / 2);
 			vidaCont = vidaCont - (fuerzaJug / 2);
 			cout << "AMBOS SE HAN ATACADO MUTUAMENTE, tu vida ahora es: " << vidaJug << endl;
-			cout << "La vida de Bowser ahora es: " << vidaCont << endl;
+			cout << "La vida de Ganondorf ahora es: " << vidaCont << endl;
 		}
 	}
 	if (contrincanteAtaque == 2) {
@@ -213,7 +213,7 @@ void Jugador::atacarContrincante3(float fuerzaJug, float fuerzaCont, float vidaC
 			vidaJug = vidaJug - (fuerzaCont / 2);
 			vidaCont = vidaCont - (fuerzaJug / 2);
 			cout << "AMBOS SE HAN ATACADO MUTUAMENTE, tu vida ahora es: " << vidaJug << endl;
-			cout << "La vida de Bowser ahora es: " << vidaCont << endl;
+			cout << "La vida de Sephiroth ahora es: " << vidaCont << endl;
 		}
 	}
 	if (contrincanteAtaque == 2) {

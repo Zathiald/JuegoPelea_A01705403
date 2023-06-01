@@ -6,18 +6,7 @@
 #include "contrincante.h"
 
 class Ganondorf : public Contrincante {
-
-private:
-	float vidaGanondorf=40.0;
-	float fuerzaWarlock=15.0;
-	float fuerzaFlame=10.0;
-	float fuerzaVolcano=25.0;
-
 public:
-	float getvidaGanon() { return vidaGanondorf; }
-	float getfuerzaWarlock() { return fuerzaWarlock; }
-	float getfuerzaFlame() { return fuerzaFlame; }
-	float getfuerzaVolcano() { return fuerzaVolcano; }
 	void atacarJugador(string decision, int aJ,Jugador jugador);
 	Ganondorf(){}
 	Ganondorf(float vidaEnem, float fuerzaEnem1, float fuerzaEnem2, float fuerzaEnem3):Contrincante(vidaEnem, fuerzaEnem1, fuerzaEnem2,fuerzaEnem3){}
@@ -81,7 +70,7 @@ void Ganondorf::atacarJugador(string decision, int aJ,Jugador jugador) {
 					cout << "La vida de Ganondorf ahora es: " << vidaCont << endl;
 				}
 				if (aJ == 2) {
-					vidaGanondorf = vidaCont- jugador.getfuerzaAtaque2();
+					vidaCont = vidaCont- jugador.getfuerzaAtaque2();
 					cout << "INCREIBLE " << jugador.getnombreJug() << " HA ATACADO A GANONDORF CON " << jugador.getnombreAtaque2() << " Ganondorf se ve enojado" << endl;
 					cout << "La vida de Ganondorf ahora es: " << vidaCont << endl;
 				}
