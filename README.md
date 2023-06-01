@@ -42,13 +42,13 @@ El factor random ya fue controlado más, bajando la probabilidad de fallo a 25% 
 ### 25/05/23 (Avance 2) (Revisión 4):
 Solo se agregaron comentarios al archivo de "jugador.h", por ahora solo se tiene la sobrecarga y sobreescritura definidas en el archivo de "contrincante.h", aun hace falta el alterar las funciones de la clase para que en cada Round sea un contrincante diferente, agregar constructores y agregar apuntadores para poder lograr que las variables se conecten correctamente, conceptos que se iran implementando en el avance 3.
 
-## 30/05/23 (Avance 3) (Revisión 1):
+### 30/05/23 (Avance 3) (Revisión 1):
 En esta revisión se movieron por completo todas las clases herencias, tal como fue recomendado en los comentarios del avance, también modifique las funciones de atacarJugador para poder aún tener sobreescritura en ellos, pero ahora incluí constructores dentro de la clase de Contrincante, constructores que implementé en el archivo main, pero aún hay un factor que analizar en lo de la función de atacarContrincante, ya que ahí aún no he sido capaz de implementar poliformismo a través de los constructores, es algo que voy a tener que revisar.
 
-## 31/05/23 (Avance 3) (Revisión 2):
+### 31/05/23 (Avance 3) (Revisión 2):
 En esta revisión se movio el creador de jugador al main ya que es una función que solo se hara una vez, también empece a interactuar más con las referencias y objetos, por ahora solo el rival Bowser tiene la implementación con constructores para cargar los valores de vida a través de las referencias, el plan es que una vez que funcione Bowser, entonces se alterara tanto Sephiroth como Ganondorf para funcionar igual, por ahora mi teoría es que se debe alterar el main.
 
-##31/05/23 (Avance 3) (Revisión 3):
+###31/05/23 (Avance 3) (Revisión 3):
 En esta revisión ya se altero las construcciones para tanto los contrincantes Ganondorf como Sephiroth, aún hace falta analizar los factores para que las variables se comuniquen entre ellas, pero para eso creo es cuestión de modificar más el main para no dividir en mayores funciones.
 
 
