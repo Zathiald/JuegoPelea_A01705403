@@ -6,23 +6,13 @@
 #include "contrincante.h"
 
 class Bowser : public Contrincante {
-private:
-	float vidaBowser=30.0;
-	float fuerzabolaFuego=20.0;
-	float fuerzaCola=15.0;
-
 public:
-	void atacarJugador(string decision, int aJ,Jugador jugador);
-	Bowser(){}
+	void atacarJugador(string decision, int aJ, Jugador jugador);
+	Bowser() {}
 	Bowser(float vidaEnem, float fuerzaEnem1, float fuerzaEnem2) :Contrincante(vidaEnem, fuerzaEnem1, fuerzaEnem2) {}
-	float getvidaBowser() { return vidaBowser; }
-	float getfuerzabolaFuego() { return fuerzabolaFuego; }
-	float getfuerzaCola() { return fuerzaCola; }
 };
 
-
-
-void Bowser::atacarJugador(string decision, int aJ,Jugador jugador){
+void Bowser::atacarJugador(string decision, int aJ, Jugador jugador) {
 	int turnoContrincante, defensaChance, contrincanteAtaque, ataqueChance;
 	turnoContrincante = rand() % 2;
 	defensaChance = rand() % 3;
@@ -70,12 +60,12 @@ void Bowser::atacarJugador(string decision, int aJ,Jugador jugador){
 			if (turnoContrincante == 0) {
 				if (aJ == 1) {
 					vidaCont = vidaCont - jugador.getfuerzaAtaque1();
-					cout << jugador.getnombreJug() << " HA REMATADO EL ATAQUE DE BOWSER CON " << jugador.getnombreAtaque1() << " Bowser se ve muy furioso";
+					cout << jugador.getnombreJug() << " HA REMATADO EL ATAQUE DE BOWSER CON " << jugador.getnombreAtaque1() << " Bowser se ve muy furioso"<<endl;
 					cout << "La vida de Bowser ahora es: " << vidaCont << endl;
 				}
 				if (aJ == 2) {
 					vidaCont = vidaCont - jugador.getfuerzaAtaque2();
-					cout << jugador.getnombreJug() << " HA REMATADO EL ATAQUE DE BOWSER CON " << jugador.getnombreAtaque2() << " Bowser se ve muy furioso";
+					cout << jugador.getnombreJug() << " HA REMATADO EL ATAQUE DE BOWSER CON " << jugador.getnombreAtaque2() << " Bowser se ve muy furioso"<<endl;
 					cout << "La vida de Bowser ahora es: " << vidaCont << endl;
 				}
 			}
@@ -146,7 +136,7 @@ void Bowser::atacarJugador(string decision, int aJ,Jugador jugador){
 					float vidaJug;
 					vidaJug = jugador.getvidaJug() - fuerzaCont2;
 					jugador.setvidaJug(vidaJug);
-					cout << "EL ATAQUE DE " << jugador.getnombreJug()  << " HA FALLADO " << endl;
+					cout << "EL ATAQUE DE " << jugador.getnombreJug() << " HA FALLADO " << endl;
 					cout << "Bowser se rie y ha atacado con su cola contra " << jugador.getnombreJug() << endl;
 					cout << "La vida de" << jugador.getnombreJug() << " ahora es " << jugador.getvidaJug() << endl;
 				}

@@ -24,6 +24,11 @@ public:
 	Contrincante(float vidaEnem, float fuerzaEnem1, float fuerzaEnem2);
 	Contrincante(float vidaEnem, float fuerzaEnem1, float fuerzaEnem2, float fuerzaEnem3);
 	Contrincante(float vidaEnem, float fuerzaEnem1, float fuerzaEnem2,float fuerzaEnem3,float fuerzaEnem4);
+	float getvidaCont() { return vidaCont; }
+	float getfuerzaCont1() { return fuerzaCont1; }
+	float getfuerzaCont2() { return fuerzaCont2; }
+	float getfuerzaCont3() { return fuerzaCont3; }
+	float getfuerzaCont4() { return fuerzaCont2; }
 };
 
 Contrincante::Contrincante(float vidaEnem, float fuerzaEnem1, float fuerzaEnem2) {
