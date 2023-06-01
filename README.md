@@ -23,7 +23,7 @@ Algo que notar es que en esta construcción actual del código, el ingresar una 
 ### 30/05/23 (Avance 3) (Revisión 1)
 En esta construcción actual del código, lo que sucede es que al ingresar una opción de ataque que no sea 1 o 2, se genera un ciclo infinito donde dice que se escoga una opción correcta, y también no se le baja la vida al enemigo, solo al usuario y al llegar a vida 0, no se termina el juego.
 
-### 31/05/23 (Avance 3) (Revisión 2)
+### 31/05/23 (Avance 3) (Revisión 2-3)
 He visto que hay ocasiones en donde al poner una opción que no sea las que el código te proporciona, se genera un error de printear muchas veces el mismo mensaje y luego se termina solo el código, pero sucede en ocasiones, en otras el código solo muestra el mensaje una vez y luego lo quita.
 
 # Historial de Revisiones
@@ -47,6 +47,9 @@ En esta revisión se movieron por completo todas las clases herencias, tal como 
 
 ##31/05/23 (Avance 3) (Revisión 2):
 En esta revisión se movio el creador de jugador al main ya que es una función que solo se hara una vez, también empece a interactuar más con las referencias y objetos, por ahora solo el rival Bowser tiene la implementación con constructores para cargar los valores de vida a través de las referencias, el plan es que una vez que funcione Bowser, entonces se alterara tanto Sephiroth como Ganondorf para funcionar igual, por ahora mi teoría es que se debe alterar el main.
+
+##31/05/23 (Avance 3) (Revisión 3):
+En esta revisión ya se altero las construcciones para tanto los contrincantes Ganondorf como Sephiroth, aún hace falta analizar los factores para que las variables se comuniquen entre ellas, pero para eso creo es cuestión de modificar más el main para no dividir en mayores funciones.
 
 
  
