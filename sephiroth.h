@@ -6,20 +6,7 @@
 #include "contrincante.h"
 
 class Sephiroth : public Contrincante {
-
-private:
-	float vidaSephiroth = 60.0;
-	float fuerzaMasamune = 15.0;
-	float fuerzaShadow = 13.0;
-	float fuerzaOctaslash = 22.0;
-	float fuerzaNova = 40.0;
-
 public:
-	float getvidaSephiroth() { return vidaSephiroth; }
-	float getfuerzaMasamune() { return fuerzaMasamune; }
-	float getfuerzaShadow() { return fuerzaShadow; }
-	float getfuerzaOctaslash() { return fuerzaOctaslash; }
-	float getfuerzaNova() { return fuerzaNova; }
 	void atacarJugador(string decision, int aJ,Jugador jugador);
 	Sephiroth(){}
 	Sephiroth(float vidaEnem, float fuerzaEnem1, float fuerzaEnem2, float fuerzaEnem3, float fuerzaEnem4) :Contrincante(vidaEnem, fuerzaEnem1, fuerzaEnem2, fuerzaEnem3, fuerzaEnem4) {}

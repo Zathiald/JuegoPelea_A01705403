@@ -63,7 +63,7 @@ void Bowser::atacarJugador(string decision, int aJ, Jugador jugador) {
 					cout << jugador.getnombreJug() << " HA REMATADO EL ATAQUE DE BOWSER CON " << jugador.getnombreAtaque1() << " Bowser se ve muy furioso"<<endl;
 					cout << "La vida de Bowser ahora es: " << vidaCont << endl;
 				}
-				if (aJ == 2) {
+				else if (aJ == 2) {
 					vidaCont = vidaCont - jugador.getfuerzaAtaque2();
 					cout << jugador.getnombreJug() << " HA REMATADO EL ATAQUE DE BOWSER CON " << jugador.getnombreAtaque2() << " Bowser se ve muy furioso"<<endl;
 					cout << "La vida de Bowser ahora es: " << vidaCont << endl;
@@ -81,7 +81,7 @@ void Bowser::atacarJugador(string decision, int aJ, Jugador jugador) {
 						cout << "La vida de Bowser ahora es: " << vidaCont << endl;
 						cout << "La vida de " << jugador.getnombreJug() << " ahora es: " << jugador.getvidaJug() << endl;
 					}
-					if (aJ == 2) {
+					else if (aJ == 2) {
 						float vida_Jug;
 						vida_Jug = jugador.getvidaJug() - (fuerzaCont1 / 2);
 						jugador.setvidaJug(vida_Jug);
@@ -103,7 +103,7 @@ void Bowser::atacarJugador(string decision, int aJ, Jugador jugador) {
 						cout << "La vida de Bowser ahora es: " << vidaCont << endl;
 						cout << "La vida de " << jugador.getnombreJug() << " ahora es: " << jugador.getvidaJug() << endl;
 					}
-					if (aJ == 2) {
+					else if (aJ == 2) {
 						vidaJug = jugador.getvidaJug() - (fuerzaCont2 / 2);
 						jugador.setvidaJug(vidaJug);
 						vidaCont = vidaCont - (jugador.getfuerzaAtaque2() / 2);

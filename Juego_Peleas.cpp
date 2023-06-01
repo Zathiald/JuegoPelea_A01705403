@@ -57,7 +57,6 @@ int turnoJugador() {
     nivelJug = jugador.getnivelJug();
 
     if (nivelJug == 1) {
-        float vidaBowser, fuerzaBola, fuerzaCola;
         int ataqueEnemigo;
         cout << "Que ataque quieres usar: " << endl;
         cout << "1: " << jugador.getnombreAtaque1() << endl;
@@ -70,29 +69,29 @@ int turnoJugador() {
         ataqueEnemigo = rand() % 1;
         if (opcionAtaque == 1) {
             if (ataqueEnemigo == 0) {
-                jugador.atacarContrincante1(fuerza1, bowser->getfuerzaCont1(), bowser->getvidaCont(), jugador);
+                jugador.atacarContrincante1(fuerza1, contrin[0]->getfuerzaCont1(), contrin[0]->getvidaCont(), jugador);
             }
             else if (ataqueEnemigo == 1) {
-                jugador.atacarContrincante1(fuerza1, bowser->getfuerzaCont2() , bowser->getvidaCont(), jugador);
+                jugador.atacarContrincante1(fuerza1, contrin[0]->getfuerzaCont2() , contrin[0]->getvidaCont(), jugador);
             }
         }
         else if (opcionAtaque == 2) {
             if (ataqueEnemigo == 0) {
-                jugador.atacarContrincante1(fuerza2, bowser->getfuerzaCont1(), bowser->getvidaCont(), jugador);
+                jugador.atacarContrincante1(fuerza2, contrin[0]->getfuerzaCont1(), contrin[0]->getvidaCont(), jugador);
             }
             else if (ataqueEnemigo == 1) {
-                jugador.atacarContrincante1(fuerza2, bowser->getfuerzaCont2() , bowser->getvidaCont(), jugador);
+                jugador.atacarContrincante1(fuerza2, contrin[0]->getfuerzaCont2() , contrin[0]->getvidaCont(), jugador);
             }
         }
-        if (bowser->getvidaCont() <= 0) {
+        else if (contrin[0]->getvidaCont() <= 0) {
             cout << nombreJug << " HA VENCIDO AL REEEY DE LOS KOOPAS, PASAAA A LA SEGUNDA PELEA ESTELAR" << endl;
             subirNivel();
-            main();
         }
     }
 
-    if (nivelJug == 2) {
+    else if (nivelJug == 2) {
         int ataqueEnemigo;
+        ataqueEnemigo = rand() % 2;
         cout << "Que ataque quieres usar: " << endl;
         cout << "1: " << jugador.getnombreAtaque1() << endl;
         cout << "2: " << jugador.getnombreAtaque2() << endl;
@@ -101,38 +100,37 @@ int turnoJugador() {
             cout << "Escoge una opcion correcta" << endl;
             turnoJugador();
         }
-        ataqueEnemigo = rand() % 2;
-        if (opcionAtaque == 1) {
+        else if (opcionAtaque == 1) {
             if (ataqueEnemigo == 1) {
-                jugador.atacarContrincante2(fuerza1, ganon->getfuerzaCont1(), ganon->getvidaCont(), jugador);
+                jugador.atacarContrincante2(fuerza1, contrin[1]->getfuerzaCont1(), contrin[1]->getvidaCont(), jugador);
             }
             else if (ataqueEnemigo == 2) {
-                jugador.atacarContrincante2(fuerza1, ganon->getfuerzaCont2(), ganon->getvidaCont(), jugador);
+                jugador.atacarContrincante2(fuerza1, contrin[1]->getfuerzaCont2(), contrin[1]->getvidaCont(), jugador);
             }
             else if (ataqueEnemigo == 3) {
-                jugador.atacarContrincante2(fuerza1, ganon->getfuerzaCont3(), ganon->getvidaCont(), jugador);
+                jugador.atacarContrincante2(fuerza1, contrin[1]->getfuerzaCont3(), contrin[1]->getvidaCont(), jugador);
             }
         }
         else if (opcionAtaque == 2) {
             if (ataqueEnemigo == 1) {
-                jugador.atacarContrincante2(fuerza2, ganon->getfuerzaCont1(), ganon->getvidaCont(), jugador);
+                jugador.atacarContrincante2(fuerza2, contrin[1]->getfuerzaCont1(), contrin[1]->getvidaCont(), jugador);
             }
             else if (ataqueEnemigo == 2) {
-                jugador.atacarContrincante2(fuerza2, ganon->getfuerzaCont2(), ganon->getvidaCont(), jugador);
+                jugador.atacarContrincante2(fuerza2, contrin[1]->getfuerzaCont2(), contrin[1]->getvidaCont(), jugador);
             }
             else if (ataqueEnemigo == 3) {
-                jugador.atacarContrincante2(fuerza2, ganon->getfuerzaCont3(), ganon->getvidaCont(), jugador);
+                jugador.atacarContrincante2(fuerza2, contrin[1]->getfuerzaCont3(), contrin[1]->getvidaCont(), jugador);
             }
         }
-        if (ganon->getvidaCont() <= 0) {
+        else if (contrin[1]->getvidaCont() <= 0) {
             cout << nombreJug << " HA VENCIDO AL REY DEMONIO, PASAAA A LA SEGUNDA PELEA ESTELAR" << endl;
             subirNivel();
-            main();
         }
     }
 
-    if (nivelJug == 3) {
+    else if (nivelJug == 3) {
         int ataqueEnemigo;
+        ataqueEnemigo = rand() % 3;
         cout << "Que ataque quieres usar: " << endl;
         cout << "1: " << jugador.getnombreAtaque1() << endl;
         cout << "2: " << jugador.getnombreAtaque2() << endl;
@@ -141,37 +139,36 @@ int turnoJugador() {
             cout << "Escoge una opcion correcta" << endl;
             turnoJugador();
         }
-        ataqueEnemigo = rand() % 3;
-        if (opcionAtaque == 1) {
+        else if (opcionAtaque == 1) {
             if (ataqueEnemigo == 1) {
-                jugador.atacarContrincante3(fuerza1, sephiroth->getfuerzaCont1(), sephiroth->getvidaCont(), jugador);
+                jugador.atacarContrincante3(fuerza1, contrin[2]->getfuerzaCont1(), contrin[2]->getvidaCont(), jugador);
             }
             else if (ataqueEnemigo == 2) {
-                jugador.atacarContrincante3(fuerza1, sephiroth->getfuerzaCont2(), sephiroth->getvidaCont(), jugador);
+                jugador.atacarContrincante3(fuerza1, contrin[2]->getfuerzaCont2(), contrin[2]->getvidaCont(), jugador);
             }
             else if (ataqueEnemigo == 3) {
-                jugador.atacarContrincante3(fuerza1, sephiroth->getfuerzaCont3(), sephiroth->getvidaCont(), jugador);
+                jugador.atacarContrincante3(fuerza1, contrin[2]->getfuerzaCont3(), contrin[2]->getvidaCont(), jugador);
             }
             else if (ataqueEnemigo == 4) {
-                jugador.atacarContrincante3(fuerza1, sephiroth->getfuerzaCont4(), sephiroth->getvidaCont(), jugador);
+                jugador.atacarContrincante3(fuerza1, contrin[2]->getfuerzaCont4(), contrin[2]->getvidaCont(), jugador);
             }
         }
         else if (opcionAtaque == 2) {
             if (ataqueEnemigo == 1) {
-                jugador.atacarContrincante3(fuerza2, sephiroth->getfuerzaCont1(), sephiroth->getvidaCont(), jugador);
+                jugador.atacarContrincante3(fuerza2, contrin[2]->getfuerzaCont1(), contrin[2]->getvidaCont(), jugador);
             }
             else if (ataqueEnemigo == 2) {
-                jugador.atacarContrincante3(fuerza2, sephiroth->getfuerzaCont2(), sephiroth->getvidaCont(), jugador);
+                jugador.atacarContrincante3(fuerza2, contrin[2]->getfuerzaCont2(), contrin[2]->getvidaCont(), jugador);
             }
             else if (ataqueEnemigo == 3) {
-                jugador.atacarContrincante3(fuerza2, sephiroth->getfuerzaCont3(), sephiroth->getvidaCont(), jugador);
+                jugador.atacarContrincante3(fuerza2, contrin[2]->getfuerzaCont3(), contrin[2]->getvidaCont(), jugador);
             }
             else if (ataqueEnemigo == 4) {
-                jugador.atacarContrincante3(fuerza2, sephiroth->getfuerzaCont4(), sephiroth->getvidaCont(), jugador);
+                jugador.atacarContrincante3(fuerza2, contrin[2]->getfuerzaCont4(), contrin[2]->getvidaCont(), jugador);
             }
 
         }
-        if (sephiroth->getvidaCont() <= 0) {
+        else if (contrin[2]->getvidaCont() <= 0) {
             cout << nombreJug << " HA VENCIDO AL ANGEL DE UN ALA,LO HA GANADO TODO DAMAS Y SEÑORES, " << nombreJug << " ES NUESTRO CAMPION" << endl;
             cout << "ERES EL CAMPION" << endl;
             return 0;
@@ -197,28 +194,27 @@ void turnoContrincante() {
             cout << "Escoge una opcion correcta" << endl;
             turnoContrincante();
         }
-        if (decision == "D") {
+        else if (decision == "D") {
             int aj;
             aj = rand() % 1;
-            bowser->atacarJugador("D", aj, jugador);
+            contrin[0] ->atacarJugador("D", aj, jugador);
         }
-        if (decision == "A") {
+        else if (decision == "A") {
             int aj;
             cout << "PARECE SER QUE " << nombreJug << " esta a punto de contraatacar, pero que ataque usara????" << endl;
             cout << "1: " << jugador.getnombreAtaque1() << endl;
             cout << "2: " << jugador.getnombreAtaque2() << endl;
             cin >> aj;
             if (aj == 1) {
-                bowser->atacarJugador("A", 1, jugador);
+                contrin[0]->atacarJugador("A", 1, jugador);
             }
-            if (aj == 2) {
-                bowser->atacarJugador("A", 2, jugador);
+            else if (aj == 2) {
+                contrin[0]->atacarJugador("A", 2, jugador);
             }
         }
-        if (vidaCont <= 0) {
+        else if (contrin[0]->getvidaCont()<= 0) {
             cout << nombreJug << " HA VENCIDO AL REEEY DE LOS KOOPAS, PASAAA A LA SEGUNDA PELEA ESTELAR" << endl;
             subirNivel();
-            main();
         }
     }
 
@@ -232,29 +228,27 @@ void turnoContrincante() {
             cout << "Escoge una opcion correcta" << endl;
             turnoContrincante();
         }
-        vidaCont = ganon->getvidaCont();
         if (decision == "D") {
             int aj;
             aj = rand() % 1;
             ganon->atacarJugador("D", aj, jugador);
         }
-        if (decision == "A") {
+        else if (decision == "A") {
             int aj;
             cout << "PARECE SER QUE " << nombreJug << " esta a punto de contraatacar, pero que ataque usara????" << endl;
             cout << "1: " << jugador.getnombreAtaque1() << endl;
             cout << "2: " << jugador.getnombreAtaque2() << endl;
             cin >> aj;
             if (aj == 1) {
-                ganon->atacarJugador("A", 1, jugador);
+                contrin[1]->atacarJugador("A", 1, jugador);
             }
-            if (aj == 2) {
-                ganon->atacarJugador("A", 2, jugador);
+            else if (aj == 2) {
+                contrin[1]->atacarJugador("A", 2, jugador);
             }
         }
-        if (vidaCont <= 0) {
+        else if (contrin[1] ->getvidaCont() <= 0) {
             cout << nombreJug << " HA VENCIDO AL REY DEMONIO, PASAAA A LA SEGUNDA PELEA ESTELAR" << endl;
             subirNivel();
-            main();
         }
     }
 
@@ -268,29 +262,27 @@ void turnoContrincante() {
             cout << "Escoge una opcion correcta" << endl;
             turnoContrincante();
         }
-        vidaCont = sephiroth->getvidaCont();
-        if (decision == "D") {
+        else if (decision == "D") {
             int aj;
             aj = rand() % 1;
-            sephiroth->atacarJugador("D", aj, jugador);
+            contrin[2]->atacarJugador("D", aj, jugador);
         }
-        if (decision == "A") {
+        else if (decision == "A") {
             int aj;
             cout << "PARECE SER QUE " << nombreJug << " esta a punto de contraatacar, pero que ataque usara????" << endl;
             cout << "1: " << jugador.getnombreAtaque1() << endl;
             cout << "2: " << jugador.getnombreAtaque2() << endl;
             cin >> aj;
             if (aj == 1) {
-                sephiroth->atacarJugador("A", 1, jugador);
+                contrin[2]->atacarJugador("A", 1, jugador);
             }
-            if (aj == 2) {
-                sephiroth->atacarJugador("A", 2, jugador);
+            else if (aj == 2) {
+                contrin[2]->atacarJugador("A", 2, jugador);
             }
         }
-        if (vidaCont <= 0) {
+        else if (contrin[2] ->getvidaCont() <= 0) {
             cout << nombreJug << " HA VENCIDO AL ANGEL DE UN ALA,LO HA GANADO TODO DAMAS Y SEÑORES, " << nombreJug << " ES NUESTRO CAMPION" << endl;
             subirNivel();
-            main();
         }
     }
 }
@@ -322,44 +314,44 @@ int main()
         cout << "Y aqui estan los stats para nuestros luchadores" << endl;
 
         cout << "-----------------BOWSER--------------------------" << endl;
-        cout << "VIDA BOWSER: " << bowser->getvidaCont() << endl;
-        cout << "FUERZA BOLA DE FUEGO: " << bowser->getfuerzaCont1() << endl;
-        cout << "FUERZA ATAQUE DE COLA: " << bowser->getfuerzaCont2() << endl;
+        cout << "VIDA BOWSER: " << contrin[0]->getvidaCont() << endl;
+        cout << "FUERZA BOLA DE FUEGO: " << contrin[0]->getfuerzaCont1() << endl;
+        cout << "FUERZA ATAQUE DE COLA: " << contrin[0]->getfuerzaCont2() << endl;
 
         cout << "-----------------" << jugador.getnombreJug()<<"-----------" << endl;
         cout << "VIDA: " << jugador.getvidaJug() << endl;
         cout << "FUERZA " << jugador.getnombreAtaque1() << " : " << jugador.getfuerzaAtaque1() << endl;
         cout << "FUERZA " << jugador.getnombreAtaque2() << " : " << jugador.getfuerzaAtaque2() << endl;
     }
-    if (jugador.getnivelJug() == 2) {
+    else if (jugador.getnivelJug() == 2) {
         cout << "BIEEEEEEENVENIDOS A LAAAA PELEA ESTELAAARRRRR!!!!" << endl;
         cout << "Ahora de la esquina izquierda tenemos a " << jugador.getnombreJug() << endl;
         cout << "Yyy de la esquina derecha tenemos al Rey Demonio, al portador de la trifuerza del poder, GANONDORF!!!" << endl;
         cout << "Pelearan para ver quien es el mejor y.... PELIEN" << endl;
 
         cout << "-----------------GANONDORF--------------------------" << endl;
-        cout << "VIDA GANONDORF: " << ganon->getvidaCont() << endl;
-        cout << "FUERZA WARLOCK PUNCH: " << ganon->getfuerzaCont1() << endl;
-        cout << "FUERZA FLAME CHOKE: " << ganon ->getfuerzaCont2() << endl;
-        cout << "FUERZA VOLCANO KICK: " << ganon->getfuerzaCont3() << endl;
+        cout << "VIDA GANONDORF: " << contrin[1]->getvidaCont() << endl;
+        cout << "FUERZA WARLOCK PUNCH: " << contrin[1]->getfuerzaCont1() << endl;
+        cout << "FUERZA FLAME CHOKE: " << contrin[1]->getfuerzaCont2() << endl;
+        cout << "FUERZA VOLCANO KICK: " << contrin[1]->getfuerzaCont3() << endl;
 
         cout << "-----------------" << jugador.getnombreJug() << "-----------" << endl;
         cout << "VIDA: " << jugador.getvidaJug() << endl;
         cout << "FUERZA " << jugador.getnombreAtaque1() << " : " << jugador.getfuerzaAtaque1() << endl;
         cout << "FUERZA " << jugador.getnombreAtaque2() << " : " << jugador.getfuerzaAtaque2() << endl;
     }
-    if (jugador.getnivelJug() == 3) {
+    else if (jugador.getnivelJug() == 3) {
         cout << "BIEEEEEEENVENIDOS A LAAAA PELEA ESTELAAARRRRR!!!!" << endl;
         cout << "Ahora de la esquina izquierda tenemos a " << jugador.getnombreJug() << endl;
         cout << "Yyy de la esquina derecha tenemos al Angel de un ala, al Angel de la muerte, SEPHIROTH!!!" << endl;
         cout << "Pelearan para ver quien es el mejor y.... PELIEN" << endl;
 
         cout << "-----------------SEPHIROTH--------------------------" << endl;
-        cout << "VIDA SEPHIROTH: " << sephiroth->getvidaCont() << endl;
-        cout << "FUERZA MASAMUNE: " << sephiroth->getfuerzaCont1() << endl;
-        cout << "FUERZA SHADOW FLARE: " << sephiroth->getfuerzaCont2() << endl;
-        cout << "FUERZA OCTASLASH: " << sephiroth->getfuerzaCont3() << endl;
-        cout << "FUERZA SUPER NOVA: " << sephiroth->getfuerzaCont4() << endl;
+        cout << "VIDA SEPHIROTH: " << contrin[2]->getvidaCont() << endl;
+        cout << "FUERZA MASAMUNE: " << contrin[2]->getfuerzaCont1() << endl;
+        cout << "FUERZA SHADOW FLARE: " << contrin[2]->getfuerzaCont2() << endl;
+        cout << "FUERZA OCTASLASH: " << contrin[2]->getfuerzaCont3() << endl;
+        cout << "FUERZA SUPER NOVA: " << contrin[2]->getfuerzaCont4() << endl;
 
         cout << "-----------------" << jugador.getnombreJug() << "-----------" << endl;
         cout << "VIDA: " << jugador.getvidaJug() << endl;
@@ -376,6 +368,6 @@ int main()
         if (jugador.getvidaJug() <= 0) {
             cout << "JUEGO TERMINADO" << endl;
             return 0;
-        }   
+        }
     }
 }
