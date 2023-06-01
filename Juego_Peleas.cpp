@@ -310,7 +310,7 @@ int main()
     cin >> nombreAtaque2;
     jugador.setnombreAtaque2(nombreAtaque2);
     cout << endl;
-    jugador.setnivelJug(2);
+    jugador.setnivelJug(1);
     jugador.setvidaJug(35.0);
     jugador.setfuerzaAtaque1(10.0);
     jugador.setfuerzaAtaque2(15.0);
