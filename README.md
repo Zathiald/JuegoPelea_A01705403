@@ -48,8 +48,11 @@ En esta revisión se movieron por completo todas las clases herencias, tal como 
 ### 31/05/23 (Avance 3) (Revisión 2):
 En esta revisión se movio el creador de jugador al main ya que es una función que solo se hara una vez, también empece a interactuar más con las referencias y objetos, por ahora solo el rival Bowser tiene la implementación con constructores para cargar los valores de vida a través de las referencias, el plan es que una vez que funcione Bowser, entonces se alterara tanto Sephiroth como Ganondorf para funcionar igual, por ahora mi teoría es que se debe alterar el main.
 
-###31/05/23 (Avance 3) (Revisión 3):
+### 31/05/23 (Avance 3) (Revisión 3):
 En esta revisión ya se altero las construcciones para tanto los contrincantes Ganondorf como Sephiroth, aún hace falta analizar los factores para que las variables se comuniquen entre ellas, pero para eso creo es cuestión de modificar más el main para no dividir en mayores funciones.
+
+### 01/06/23 (Avance 3) (Revisión 4):
+En esta revisión al fin se arreglo el problema de cuando se ponía una opcion incorrecta, el mensaje no se mostraba correctamente, ese problema ya se pudo solucionar, el problema ahora es que aún hay problemas con la distinción de vida del enemigo, he movido toda la pelea al main, pero ahora lo que sucede es que parece ser se crea un enemigo diferente en cada función, aún cuando el jugador si se mantiene constante.
 
 
  
