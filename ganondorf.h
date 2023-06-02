@@ -7,12 +7,12 @@
 
 class Ganondorf : public Contrincante {
 public:
-	void atacarJugador(string decision, int aJ,Jugador jugador);
+	void atacarJugador(string decision, int aJ,Jugador jugador,Contrincante* ganondorf);
 	Ganondorf(){}
 	Ganondorf(float vidaEnem, float fuerzaEnem1, float fuerzaEnem2, float fuerzaEnem3):Contrincante(vidaEnem, fuerzaEnem1, fuerzaEnem2,fuerzaEnem3){}
 };
 
-void Ganondorf::atacarJugador(string decision, int aJ,Jugador jugador) {
+void Ganondorf::atacarJugador(string decision, int aJ,Jugador jugador,Contrincante* ganondorf) {
 	int turnoContrincante, defensaChance, contrincanteAtaque, ataqueChance;
 	turnoContrincante = rand() % 2;
 	defensaChance = rand() % 3;
@@ -65,12 +65,14 @@ void Ganondorf::atacarJugador(string decision, int aJ,Jugador jugador) {
 		if (ataqueChance == 0 || ataqueChance == 1 || ataqueChance == 2) {
 			if (turnoContrincante == 0) {
 				if (aJ == 1) {
-					vidaCont = vidaCont - jugador.getfuerzaAtaque1();
+					vidaCont = ganondorf->getvidaCont() - (jugador.getfuerzaAtaque1());
+					ganondorf->setvidaCont(vidaCont);
 					cout << "INCREIBLE " << jugador.getnombreJug() << " HA ATACADO A GANONDORF CON " << jugador.getnombreAtaque1() << " Ganondorf se ve enojado" << endl;
 					cout << "La vida de Ganondorf ahora es: " << vidaCont << endl;
 				}
 				if (aJ == 2) {
-					vidaCont = vidaCont- jugador.getfuerzaAtaque2();
+					vidaCont = ganondorf->getvidaCont() - (jugador.getfuerzaAtaque2());
+					ganondorf->setvidaCont(vidaCont);
 					cout << "INCREIBLE " << jugador.getnombreJug() << " HA ATACADO A GANONDORF CON " << jugador.getnombreAtaque2() << " Ganondorf se ve enojado" << endl;
 					cout << "La vida de Ganondorf ahora es: " << vidaCont << endl;
 				}
@@ -81,7 +83,8 @@ void Ganondorf::atacarJugador(string decision, int aJ,Jugador jugador) {
 						float vidaJug;
 						vidaJug = jugador.getvidaJug() - (fuerzaCont1 / 2);
 						jugador.setvidaJug(vidaJug);
-						vidaCont = vidaCont - (jugador.getfuerzaAtaque1() / 2);
+						vidaCont = ganondorf->getvidaCont() - (jugador.getfuerzaAtaque1() / 2);
+						ganondorf->setvidaCont(vidaCont);
 						cout << "INCREIBLE " << jugador.getnombreJug()  << " HA ATACADO A GANONDORF CON " << jugador.getnombreAtaque1() << endl;
 						cout << "Pero Ganondorf usando la trifuerza del poder ha rematado con un Warlock Punch, esto se pone fiero" << endl;
 						cout << "La vida de Ganondorf ahora es: " << vidaCont << endl;
@@ -91,7 +94,8 @@ void Ganondorf::atacarJugador(string decision, int aJ,Jugador jugador) {
 						float vidaJug;
 						vidaJug = jugador.getvidaJug() - (fuerzaCont1 / 2);
 						jugador.setvidaJug(vidaJug);
-						vidaCont = vidaCont - (jugador.getfuerzaAtaque2() / 2);
+						vidaCont = ganondorf->getvidaCont() - (jugador.getfuerzaAtaque2() / 2);
+						ganondorf->setvidaCont(vidaCont);
 						cout << "INCREIBLE " << jugador.getnombreJug() << " HA ATACADO A GANONDORF CON " << jugador.getnombreAtaque2() << endl;
 						cout << "Pero Ganondorf usando la trifuerza del poder ha rematado con un Warlock Punch, esto se pone fiero" << endl;
 						cout << "La vida de Ganondorf ahora es: " << vidaCont << endl;
@@ -103,7 +107,8 @@ void Ganondorf::atacarJugador(string decision, int aJ,Jugador jugador) {
 						float vidaJug;
 						vidaJug = jugador.getvidaJug() - (fuerzaCont2 / 2);
 						jugador.setvidaJug(vidaJug);
-						vidaCont = vidaCont- (jugador.getfuerzaAtaque1() / 2);
+						vidaCont = ganondorf->getvidaCont() - (jugador.getfuerzaAtaque1() / 2);
+						ganondorf->setvidaCont(vidaCont);
 						cout << "INCREIBLE " << jugador.getnombreJug() << " HA ATACADO A GANONDORF CON " << jugador.getnombreAtaque1() << endl;
 						cout << "Pero Ganondorf usando la trifuerza del poder ha rematado con un Flame Choke, esto se pone fiero" << endl;
 						cout << "La vida de Ganondorf ahora es: " << vidaCont << endl;
@@ -113,7 +118,8 @@ void Ganondorf::atacarJugador(string decision, int aJ,Jugador jugador) {
 						float vidaJug;
 						vidaJug = jugador.getvidaJug() - (fuerzaCont2 / 2);
 						jugador.setvidaJug(vidaJug);
-						vidaCont= vidaCont - (jugador.getfuerzaAtaque2() / 2);
+						vidaCont = ganondorf->getvidaCont() - (jugador.getfuerzaAtaque2() / 2);
+						ganondorf->setvidaCont(vidaCont);
 						cout << "INCREIBLE " << jugador.getnombreJug() << " HA ATACADO A GANONDORF CON " << jugador.getnombreAtaque2() << endl;
 						cout << "Pero Ganondorf usando la trifuerza del poder ha rematado con un Flame Choke, esto se pone fiero" << endl;
 						cout << "La vida de Ganondorf ahora es: " << vidaCont << endl;
@@ -125,7 +131,8 @@ void Ganondorf::atacarJugador(string decision, int aJ,Jugador jugador) {
 						float vidaJug;
 						vidaJug = jugador.getvidaJug() - (fuerzaCont3 / 2);
 						jugador.setvidaJug(vidaJug);
-						vidaCont = vidaCont - (jugador.getfuerzaAtaque1() / 2);
+						vidaCont = ganondorf->getvidaCont() - (jugador.getfuerzaAtaque1() / 2);
+						ganondorf->setvidaCont(vidaCont);
 						cout << "INCREIBLE " << jugador.getnombreJug() << " HA ATACADO A GANONDORF CON " << jugador.getnombreAtaque1() << endl;
 						cout << "Pero Ganondorf usando la trifuerza del poder ha rematado con un Volcano Kick, esto se pone fiero" << endl;
 						cout << "La vida de Ganondorf ahora es: " << vidaCont << endl;
@@ -135,7 +142,8 @@ void Ganondorf::atacarJugador(string decision, int aJ,Jugador jugador) {
 						float vidaJug;
 						vidaJug = jugador.getvidaJug() - (fuerzaCont3 / 2);
 						jugador.setvidaJug(vidaJug);
-						vidaCont = vidaCont- (jugador.getfuerzaAtaque2() / 2);
+						vidaCont = ganondorf->getvidaCont() - (jugador.getfuerzaAtaque2() / 2);
+						ganondorf->setvidaCont(vidaCont);
 						cout << "INCREIBLE " << jugador.getnombreJug() << " HA ATACADO A GANONDORF CON " << jugador.getnombreAtaque2() << endl;
 						cout << "Pero Ganondorf usando la trifuerza del poder ha rematado con un Volcano Kick, esto se pone fiero" << endl;
 						cout << "La vida de Ganondorf ahora es: " << vidaCont << endl;

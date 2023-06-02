@@ -7,12 +7,12 @@
 
 class Sephiroth : public Contrincante {
 public:
-	void atacarJugador(string decision, int aJ,Jugador jugador);
+	void atacarJugador(string decision, int aJ,Jugador jugador,Contrincante* sephiroth);
 	Sephiroth(){}
 	Sephiroth(float vidaEnem, float fuerzaEnem1, float fuerzaEnem2, float fuerzaEnem3, float fuerzaEnem4) :Contrincante(vidaEnem, fuerzaEnem1, fuerzaEnem2, fuerzaEnem3, fuerzaEnem4) {}
 };
 
-void Sephiroth::atacarJugador(string decision, int aJ,Jugador jugador) {
+void Sephiroth::atacarJugador(string decision, int aJ,Jugador jugador,Contrincante* sephiroth) {
 	int turnoContrincante, defensaChance, contrincanteAtaque, ataqueChance;
 	turnoContrincante = rand() % 2;
 	defensaChance = rand() % 3;
@@ -74,13 +74,15 @@ void Sephiroth::atacarJugador(string decision, int aJ,Jugador jugador) {
 		if (ataqueChance == 0 || ataqueChance == 1 || ataqueChance == 2) {
 			if (turnoContrincante == 0) {
 				if (aJ == 1) {
-					vidaCont = vidaCont - jugador.getfuerzaAtaque1();
+					vidaCont = sephiroth->getvidaCont() - jugador.getfuerzaAtaque1();
+					sephiroth->setvidaCont(vidaCont);
 					cout << "NO ME LO CREO " << jugador.getnombreJug() << " HA ATACADO A SEPHIROTH CON " << jugador.getnombreAtaque1() << endl;
 					cout << "Pero parece ser Sephiroth solo sonrie al haber recibido el ataque" << endl;
 					cout << "La vida de Sephiroth ahora es: " << vidaCont << endl;
 				}
 				if (aJ == 2) {
-					vidaCont = vidaCont - jugador.getfuerzaAtaque2();
+					vidaCont = sephiroth->getvidaCont() - jugador.getfuerzaAtaque2();
+					sephiroth->setvidaCont(vidaCont);
 					cout << "NO ME LO CREO " << jugador.getnombreJug() << " HA ATACADO A SEPHIROTH CON " << jugador.getnombreAtaque2() << endl;
 					cout << "Pero parece ser Sephiroth solo sonrie al haber recibido el ataque" << endl;
 					cout << "La vida de Sephiroth ahora es: " << vidaCont << endl;
@@ -92,7 +94,8 @@ void Sephiroth::atacarJugador(string decision, int aJ,Jugador jugador) {
 						float vidaJug;
 						vidaJug = jugador.getvidaJug() - (fuerzaCont1 / 2);
 						jugador.setvidaJug(vidaJug);
-						vidaCont = vidaCont - (jugador.getfuerzaAtaque1() / 2);
+						vidaCont = sephiroth->getvidaCont() - (jugador.getfuerzaAtaque1()/2);
+						sephiroth->setvidaCont(vidaCont);
 						cout << "NO ME LO CREO " << jugador.getnombreJug() << " HA ATACADO A SEPHIROTH CON " << jugador.getnombreAtaque1() << endl;
 						cout << "Pero Sephiroth no se queda atras y remata con su Masamune, parece ser Sephiroth disfruta esta pelea" << endl;
 						cout << "La vida de Sephiroth ahora es: " << vidaCont << endl;
@@ -103,7 +106,8 @@ void Sephiroth::atacarJugador(string decision, int aJ,Jugador jugador) {
 						float vidaJug;
 						vidaJug = jugador.getvidaJug() - (fuerzaCont1 / 2);
 						jugador.setvidaJug(vidaJug);
-						vidaCont = vidaCont - (jugador.getfuerzaAtaque2() / 2);
+						vidaCont = sephiroth->getvidaCont() - (jugador.getfuerzaAtaque2() / 2);
+						sephiroth->setvidaCont(vidaCont);
 						cout << "NO ME LO CREO " << jugador.getnombreJug() << " HA ATACADO A SEPHIROTH CON " << jugador.getnombreAtaque2() << endl;
 						cout << "Pero Sephiroth no se queda atras y remata con su Masamune, parece ser Sephiroth disfruta esta pelea" << endl;
 						cout << "La vida de Sephiroth ahora es: " << vidaCont << endl;
@@ -115,7 +119,8 @@ void Sephiroth::atacarJugador(string decision, int aJ,Jugador jugador) {
 						float vidaJug;
 						vidaJug = jugador.getvidaJug() - (fuerzaCont2 / 2);
 						jugador.setvidaJug(vidaJug);
-						vidaCont = vidaCont - (jugador.getfuerzaAtaque1() / 2);
+						vidaCont = sephiroth->getvidaCont() - (jugador.getfuerzaAtaque1() / 2);
+						sephiroth->setvidaCont(vidaCont);
 						cout << "NO ME LO CREO " << jugador.getnombreJug() << " HA ATACADO A SEPHIROTH CON " << jugador.getnombreAtaque1() << endl;
 						cout << "Pero Sephiroth no se queda atras y remata con Shadow Flare, parece ser Sephiroth disfruta esta pelea" << endl;
 						cout << "La vida de Sephiroth ahora es: " << vidaCont << endl;
@@ -125,7 +130,8 @@ void Sephiroth::atacarJugador(string decision, int aJ,Jugador jugador) {
 						float vidaJug;
 						vidaJug = jugador.getvidaJug() - (fuerzaCont2 / 2);
 						jugador.setvidaJug(vidaJug);
-						vidaCont = vidaCont - (jugador.getfuerzaAtaque2() / 2);
+						vidaCont = sephiroth->getvidaCont() - (jugador.getfuerzaAtaque2() / 2);
+						sephiroth->setvidaCont(vidaCont);
 						cout << "NO ME LO CREO " << jugador.getnombreJug() << " HA ATACADO A SEPHIROTH CON " << jugador.getnombreAtaque2() << endl;
 						cout << "Pero Sephiroth no se queda atras y remata con Shadow Flare, parece ser Sephiroth disfruta esta pelea" << endl;
 						cout << "La vida de Sephiroth ahora es: " << vidaCont << endl;
@@ -137,7 +143,8 @@ void Sephiroth::atacarJugador(string decision, int aJ,Jugador jugador) {
 						float vidaJug;
 						vidaJug = jugador.getvidaJug() - (fuerzaCont3 / 2);
 						jugador.setvidaJug(vidaJug);
-						vidaCont = vidaCont - (jugador.getfuerzaAtaque1() / 2);
+						vidaCont = sephiroth->getvidaCont() - (jugador.getfuerzaAtaque1() / 2);
+						sephiroth->setvidaCont(vidaCont);
 						cout << "NO ME LO CREO " << jugador.getnombreJug() << " HA ATACADO A SEPHIROTH CON " << jugador.getnombreAtaque1() << endl;
 						cout << "Pero Sephiroth no se queda atras y remata con Octaslash, parece ser Sephiroth disfruta esta pelea" << endl;
 						cout << "La vida de Sephiroth ahora es: " << vidaCont << endl;
@@ -147,7 +154,8 @@ void Sephiroth::atacarJugador(string decision, int aJ,Jugador jugador) {
 						float vidaJug;
 						vidaJug = jugador.getvidaJug() - (fuerzaCont3 / 2);
 						jugador.setvidaJug(vidaJug);
-						vidaCont = vidaCont - (jugador.getfuerzaAtaque2() / 2);
+						vidaCont = sephiroth->getvidaCont() - (jugador.getfuerzaAtaque2() / 2);
+						sephiroth->setvidaCont(vidaCont);
 						cout << "NO ME LO CREO " << jugador.getnombreJug() << " HA ATACADO A SEPHIROTH CON " << jugador.getnombreAtaque2() << endl;
 						cout << "Pero Sephiroth no se queda atras y remata con Octaslash, parece ser Sephiroth disfruta esta pelea" << endl;
 						cout << "La vida de Sephiroth ahora es: " << vidaCont << endl;
@@ -159,7 +167,8 @@ void Sephiroth::atacarJugador(string decision, int aJ,Jugador jugador) {
 						float vidaJug;
 						vidaJug = jugador.getvidaJug() - (fuerzaCont4 / 2);
 						jugador.setvidaJug(vidaJug);
-						vidaCont = vidaCont - (jugador.getfuerzaAtaque1() / 2);
+						vidaCont = sephiroth->getvidaCont() - (jugador.getfuerzaAtaque1() / 2);
+						sephiroth->setvidaCont(vidaCont);
 						cout << "NO ME LO CREO " << jugador.getnombreJug() << " HA ATACADO A SEPHIROTH CON " << jugador.getnombreAtaque1() << endl;
 						cout << "Pero Sephiroth no se queda atras y remata con Super Nova, parece ser Sephiroth disfruta esta pelea" << endl;
 						cout << "La vida de Sephiroth ahora es: " << vidaCont << endl;
@@ -169,7 +178,8 @@ void Sephiroth::atacarJugador(string decision, int aJ,Jugador jugador) {
 						float vidaJug;
 						vidaJug = jugador.getvidaJug() - (fuerzaCont4 / 2);
 						jugador.setvidaJug(vidaJug);
-						vidaCont = vidaCont - (jugador.getfuerzaAtaque2() / 2);
+						vidaCont = sephiroth->getvidaCont() - (jugador.getfuerzaAtaque2() / 2);
+						sephiroth->setvidaCont(vidaCont);
 						cout << "NO ME LO CREO " << jugador.getnombreJug() << " HA ATACADO A SEPHIROTH CON " << jugador.getnombreAtaque2() << endl;
 						cout << "Pero Sephiroth no se queda atras y remata con Super Nova, parece ser Sephiroth disfruta esta pelea" << endl;
 						cout << "La vida de Sephiroth ahora es: " << vidaCont << endl;

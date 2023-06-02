@@ -19,7 +19,7 @@ public:
 	float fuerzaCont3;
 	float fuerzaCont4;
 	Jugador jugador;
-	virtual void atacarJugador(string decision, int aJ,Jugador jugador);
+	virtual void atacarJugador(string decision, int aJ,Jugador jugador,Contrincante* contrincante);
 	Contrincante(){}
 	Contrincante(float vidaEnem, float fuerzaEnem1, float fuerzaEnem2);
 	Contrincante(float vidaEnem, float fuerzaEnem1, float fuerzaEnem2, float fuerzaEnem3);
@@ -29,7 +29,12 @@ public:
 	float getfuerzaCont2() { return fuerzaCont2; }
 	float getfuerzaCont3() { return fuerzaCont3; }
 	float getfuerzaCont4() { return fuerzaCont2; }
+	void setvidaCont(float vidaEnem);
 };
+
+void Contrincante::setvidaCont(float vidaEnem) {
+	vidaCont = vidaEnem;
+}
 
 Contrincante::Contrincante(float vidaEnem, float fuerzaEnem1, float fuerzaEnem2) {
 	vidaCont = vidaEnem;
@@ -52,7 +57,7 @@ Contrincante::Contrincante(float vidaEnem, float fuerzaEnem1, float fuerzaEnem2,
 	fuerzaCont4 = fuerzaEnem4;
 }
 
-void Contrincante::atacarJugador(string decision, int aJ,Jugador jugador) {
+void Contrincante::atacarJugador(string decision, int aJ,Jugador jugador, Contrincante* contrincante) {
 	int turnoContrincante, defensaChance, contrincanteAtaque, ataqueChance;
 	turnoContrincante = rand() % 2;
 	defensaChance = rand() % 3;
@@ -97,11 +102,13 @@ void Contrincante::atacarJugador(string decision, int aJ,Jugador jugador) {
 		if (ataqueChance == 0 || ataqueChance == 1 || ataqueChance == 2) {
 			if (turnoContrincante == 0) {
 				if (aJ == 1) {
-					vidaCont = vidaCont - jugador.getfuerzaAtaque1();
+					vidaCont = contrincante->getvidaCont() - (jugador.getfuerzaAtaque1());
+					contrincante->setvidaCont(vidaCont);
 					cout << "HAS ATACADO!!!, lograste quitarle vida al contrincante, su vida ahora es: " << vidaCont << endl;
 				}
 				if (aJ == 2) {
-					vidaCont = vidaCont - jugador.getfuerzaAtaque2();
+					vidaCont = contrincante->getvidaCont() - (jugador.getfuerzaAtaque2());
+					contrincante->setvidaCont(vidaCont);
 					cout << "HAS ATACADO!!!, lograste quitarle vida al contrincante, su vida ahora es: " << vidaCont << endl;
 				}
 			}
@@ -111,7 +118,8 @@ void Contrincante::atacarJugador(string decision, int aJ,Jugador jugador) {
 						float vidaJug;
 						vidaJug = jugador.getvidaJug() - (fuerzaCont1 / 2);
 						jugador.setvidaJug(vidaJug);
-						vidaCont = vidaCont - (jugador.getfuerzaAtaque1() / 2);
+						vidaCont = contrincante->getvidaCont() - (jugador.getfuerzaAtaque1() / 2);
+						contrincante->setvidaCont(vidaCont);
 						cout << "HAS ATACADO!!!, pero el contrincante te la remato y ataco de vuelta, tu vida ahora es: " << jugador.getvidaJug() << endl;
 						cout << "La vida del contrincante ahora es: " << vidaCont << endl;
 					}
@@ -119,7 +127,8 @@ void Contrincante::atacarJugador(string decision, int aJ,Jugador jugador) {
 						float vidaJug;
 						vidaJug = jugador.getvidaJug() - (fuerzaCont1 / 2);
 						jugador.setvidaJug(vidaJug);
-						vidaCont = vidaCont - (jugador.getfuerzaAtaque2() / 2);
+						vidaCont = contrincante->getvidaCont() - (jugador.getfuerzaAtaque2() / 2);
+						contrincante->setvidaCont(vidaCont);
 						cout << "HAS ATACADO!!!, pero el contrincante te la remato y ataco de vuelta, tu vida ahora es: " << jugador.getvidaJug() << endl;
 						cout << "La vida del contrincante ahora es: " << vidaCont << endl;
 					}
@@ -129,7 +138,8 @@ void Contrincante::atacarJugador(string decision, int aJ,Jugador jugador) {
 						float vidaJug;
 						vidaJug = jugador.getvidaJug() - (fuerzaCont2 / 2);
 						jugador.setvidaJug(vidaJug);
-						vidaCont = vidaCont - (jugador.getfuerzaAtaque1() / 2);
+						vidaCont = contrincante->getvidaCont() - (jugador.getfuerzaAtaque1() / 2);
+						contrincante->setvidaCont(vidaCont);
 						cout << "HAS ATACADO!!!, pero el contrincante te la remato y ataco de vuelta, tu vida ahora es: " << jugador.getvidaJug() << endl;
 						cout << "La vida del contrincante ahora es: " << vidaCont << endl;
 					}
@@ -137,7 +147,8 @@ void Contrincante::atacarJugador(string decision, int aJ,Jugador jugador) {
 						float vidaJug;
 						vidaJug = jugador.getvidaJug() - (fuerzaCont2 / 2);
 						jugador.setvidaJug(vidaJug);
-						vidaCont = vidaCont - (jugador.getfuerzaAtaque2() / 2);
+						vidaCont = contrincante->getvidaCont() - (jugador.getfuerzaAtaque2() / 2);
+						contrincante->setvidaCont(vidaCont);
 						cout << "HAS ATACADO!!!, pero el contrincante te la remato y ataco de vuelta, tu vida ahora es: " << jugador.getvidaJug() << endl;
 						cout << "La vida del contrincante ahora es: " << vidaCont << endl;
 					}

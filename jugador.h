@@ -126,31 +126,31 @@ void Jugador::atacarContrincante1(float fuerzaJug,float fuerzaCont, float vidaCo
 	contrincanteAtaque = rand() % 2;
 	jugadorChance = rand() % 3;
 	if (contrincanteAtaque == 0) {
-		if (jugadorChance == 3) {
+		if (jugadorChance == 2 || jugadorChance == 3) {
 			cout << "TU ATAQUE HA FALLADO...pero Bowser tampoco logro hacer nada" << endl;
 		}
-		if (jugadorChance == 0 || jugadorChance == 1 || jugadorChance == 2) {
+		else if (jugadorChance == 0 || jugadorChance == 1) {
 			vidaCont = vidaCont - fuerzaJug;
 			cout << "HAS LOGRADO ATACAR!!!, la vida de Bowser ahora es: " << vidaCont<< endl;
 		}
 	}
-	if (contrincanteAtaque == 1) {
-		if (jugadorChance == 3) {
+	else if (contrincanteAtaque == 1) {
+		if (jugadorChance == 2 || jugadorChance == 3) {
 			vidaJug = vidaJug - fuerzaCont;
 			cout << "TU ATAQUE HA FALLADO y peor aun BOWSER SI TE ATACO, tu vida ahora es: " << vidaJug << endl;
 		}
-		if (jugadorChance == 0 || jugadorChance == 1 || jugadorChance == 2) {
+		else if (jugadorChance == 0 || jugadorChance == 1 ) {
 			vidaJug = vidaJug - (fuerzaCont / 2);
 			vidaCont = vidaCont - (fuerzaJug / 2);
 			cout << "AMBOS SE HAN ATACADO MUTUAMENTE, tu vida ahora es: " << vidaJug << endl;
 			cout << "La vida de Bowser ahora es: " << vidaCont << endl;
 		}
 	}
-	if (contrincanteAtaque == 2) {
-		if (jugadorChance == 3) {
+	else if (contrincanteAtaque == 2) {
+		if (jugadorChance == 2 || jugadorChance == 3) {
 			cout << "TU ATAQUE HA FALLADO, pero Bowser se estaba defendiendo así que no paso nada al final "<< endl;
 		}
-		if (jugadorChance == 0 || jugadorChance == 1 || jugadorChance == 2) {
+		else if (jugadorChance == 0 || jugadorChance == 1 ) {
 			cout << "HAS LOGRADO ATACAR!!, pero Bowser se defendio, nada cambio" << endl;
 		}
 	}
@@ -161,31 +161,31 @@ void Jugador::atacarContrincante2(float fuerzaJug, float fuerzaCont, float vidaC
 	contrincanteAtaque = rand() % 2;
 	jugadorChance = rand() % 3;
 	if (contrincanteAtaque == 0) {
-		if (jugadorChance == 3) {
+		if (jugadorChance == 2 || jugadorChance == 3) {
 			cout << "TU ATAQUE HA FALLADO...pero Ganondorf tampoco logro hacer nada" << endl;
 		}
-		if (jugadorChance == 0 || jugadorChance == 1 || jugadorChance == 2) {
+		else if (jugadorChance == 0 || jugadorChance == 1) {
 			vidaCont = vidaCont - fuerzaJug;
 			cout << "HAS LOGRADO ATACAR!!!, la vida de Ganondorf ahora es: " << vidaCont << endl;
 		}
 	}
-	if (contrincanteAtaque == 1) {
-		if (jugadorChance == 3) {
+	else if (contrincanteAtaque == 1) {
+		if (jugadorChance == 2 || jugadorChance == 3) {
 			vidaJug = vidaJug - fuerzaCont;
 			cout << "TU ATAQUE HA FALLADO y peor aun GANONDORF SI TE ATACO, tu vida ahora es: " << vidaJug << endl;
 		}
-		if (jugadorChance == 0 || jugadorChance == 1 || jugadorChance == 2) {
+		else if (jugadorChance == 0 || jugadorChance == 1) {
 			vidaJug = vidaJug - (fuerzaCont / 2);
 			vidaCont = vidaCont - (fuerzaJug / 2);
 			cout << "AMBOS SE HAN ATACADO MUTUAMENTE, tu vida ahora es: " << vidaJug << endl;
 			cout << "La vida de Ganondorf ahora es: " << vidaCont << endl;
 		}
 	}
-	if (contrincanteAtaque == 2) {
-		if (jugadorChance == 3) {
+	else if (contrincanteAtaque == 2) {
+		if (jugadorChance == 2 || jugadorChance == 3) {
 			cout << "TU ATAQUE HA FALLADO, pero Ganondorf se estaba defendiendo así que no paso nada al final " << endl;
 		}
-		if (jugadorChance == 0 || jugadorChance == 1 || jugadorChance == 2) {
+		else if (jugadorChance == 0 || jugadorChance == 1) {
 			cout << "HAS LOGRADO ATACAR!!, pero Ganondorf se defendio, nada cambio" << endl;
 		}
 	}
@@ -196,31 +196,31 @@ void Jugador::atacarContrincante3(float fuerzaJug, float fuerzaCont, float vidaC
 	contrincanteAtaque = rand() % 2;
 	jugadorChance = rand() % 3;
 	if (contrincanteAtaque == 0) {
-		if (jugadorChance == 3) {
+		if (jugadorChance == 2 || jugadorChance == 3) {
 			cout << "TU ATAQUE HA FALLADO...pero Sephiroth tampoco logro hacer nada" << endl;
 		}
-		if (jugadorChance == 0 || jugadorChance == 1 || jugadorChance == 2) {
+		else if (jugadorChance == 0 || jugadorChance == 1) {
 			vidaCont = vidaCont - fuerzaJug;
 			cout << "HAS LOGRADO ATACAR!!!, la vida de Sephiroth ahora es: " << vidaCont << endl;
 		}
 	}
-	if (contrincanteAtaque == 1) {
-		if (jugadorChance == 3) {
+	else if (contrincanteAtaque == 1) {
+		if (jugadorChance == 2 || jugadorChance == 3) {
 			vidaJug = vidaJug - fuerzaCont;
 			cout << "TU ATAQUE HA FALLADO y peor aun SEPHIROTH SI TE ATACO, tu vida ahora es: " << vidaJug << endl;
 		}
-		if (jugadorChance == 0 || jugadorChance == 1 || jugadorChance == 2) {
+		else if (jugadorChance == 0 || jugadorChance == 1) {
 			vidaJug = vidaJug - (fuerzaCont / 2);
 			vidaCont = vidaCont - (fuerzaJug / 2);
 			cout << "AMBOS SE HAN ATACADO MUTUAMENTE, tu vida ahora es: " << vidaJug << endl;
 			cout << "La vida de Sephiroth ahora es: " << vidaCont << endl;
 		}
 	}
-	if (contrincanteAtaque == 2) {
-		if (jugadorChance == 3) {
+	else if (contrincanteAtaque == 2) {
+		if (jugadorChance == 2 || jugadorChance == 3) {
 			cout << "TU ATAQUE HA FALLADO, pero Sephiroth se estaba defendiendo así que no paso nada al final " << endl;
 		}
-		if (jugadorChance == 0 || jugadorChance == 1 || jugadorChance == 2) {
+		else if (jugadorChance == 0 || jugadorChance == 1) {
 			cout << "HAS LOGRADO ATACAR!!, pero Sephiroth se defendio, nada cambio" << endl;
 		}
 	}
