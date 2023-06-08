@@ -26,6 +26,9 @@ En esta construcción actual del código, lo que sucede es que al ingresar una o
 ### 31/05/23 (Avance 3) (Revisión 2-3)
 He visto que hay ocasiones en donde al poner una opción que no sea las que el código te proporciona, se genera un error de printear muchas veces el mismo mensaje y luego se termina solo el código, pero sucede en ocasiones, en otras el código solo muestra el mensaje una vez y luego lo quita.
 
+### 08/06/23 (Avance 4) (Revisión 1)
+El codigo actualmente no compila, hace falta arreglar los problemas con apuntadores.
+
 # Historial de Revisiones
 
 ### 24/05/23 (Avance 2) (Revisión 1):
@@ -53,6 +56,9 @@ En esta revisión ya se altero las construcciones para tanto los contrincantes G
 
 ### 01/06/23 (Avance 3) (Revisión 4):
 En esta revisión al fin se arreglo el problema de cuando se ponía una opcion incorrecta, el mensaje no se mostraba correctamente, ese problema ya se pudo solucionar, el problema ahora es que aún hay problemas con la distinción de vida del enemigo, he movido toda la pelea al main, pero ahora lo que sucede es que parece ser se crea un enemigo diferente en cada función, aún cuando el jugador si se mantiene constante.
+
+### 08/06/23 (Avance 4) (Revisión 1):
+En esta revisión, por el bien del código decidi no agregar clases abstractas, en vez de eso me dedique a agregar apuntadores a las funciones de ataque para que durante el juego se mantenga el mismo jugador y contrincante, en vez de que se creen copias, pero aún hay errores en ese aspecto a arreglar.
 
 
  
