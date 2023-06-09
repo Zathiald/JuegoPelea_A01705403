@@ -29,6 +29,9 @@ He visto que hay ocasiones en donde al poner una opción que no sea las que el c
 ### 08/06/23 (Avance 4) (Revisión 1)
 El codigo actualmente no compila, hace falta arreglar los problemas con apuntadores.
 
+### 08/06/23 (Avance 4) (Revisión 1)
+El código compila correctamente, pero aún hay un error en la pelea contra Ganondorf, ya que si el usuario va muy rápido no se registran los ataques y además al seleccionar un ataque este se repite muchisimo.
+
 # Historial de Revisiones
 
 ### 24/05/23 (Avance 2) (Revisión 1):
@@ -59,6 +62,9 @@ En esta revisión al fin se arreglo el problema de cuando se ponía una opcion i
 
 ### 08/06/23 (Avance 4) (Revisión 1):
 En esta revisión, por el bien del código decidi no agregar clases abstractas, en vez de eso me dedique a agregar apuntadores a las funciones de ataque para que durante el juego se mantenga el mismo jugador y contrincante, en vez de que se creen copias, pero aún hay errores en ese aspecto a arreglar.
+
+### 08/06/23 (Avance 4) (Revisión 2):
+En esta revisión, ya se implementaron los indicadores correctamente, la clase de Jugador paso a solo ser para constructores y se creo un apuntador dentro del main para que ese mismo valor se vaya actualizando, hay que notar que en la pelea de Ganondorf aún hay un error ya que se imprime muchas veces el mensaje.
 
 
  
