@@ -29,7 +29,7 @@ He visto que hay ocasiones en donde al poner una opción que no sea las que el c
 ### 08/06/23 (Avance 4) (Revisión 1)
 El codigo actualmente no compila, hace falta arreglar los problemas con apuntadores.
 
-### 08/06/23 (Avance 4) (Revisión 1)
+### 08/06/23 (Avance 4) (Revisión 2)
 El código compila correctamente, pero aún hay un error en la pelea contra Ganondorf, ya que si el usuario va muy rápido no se registran los ataques y además al seleccionar un ataque este se repite muchisimo.
 
 # Historial de Revisiones
