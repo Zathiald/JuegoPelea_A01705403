@@ -19,14 +19,14 @@ void subirNivel(Jugador* jugador) {
     nivel = jugador->getnivelJug();
     if (nivel == 1) {
         jugador->setnivelJug(2);
-        jugador->setvidaJug(45.0);
+        jugador->setvidaJug(55.0);
         jugador->setfuerzaAtaque1(20.0);
         jugador->setfuerzaAtaque2(25.0);
         cout << "TUS STATS HAN MEJORADO" << endl;
     }
     else if (nivel == 2) {
         jugador->setnivelJug(3);
-        jugador->setvidaJug(60.0);
+        jugador->setvidaJug(70.0);
         jugador->setfuerzaAtaque1(30.0);
         jugador->setfuerzaAtaque2(45.0);
         cout << "TUS STATS HAN MEJORADO" << endl;
@@ -39,9 +39,9 @@ int main() {
     Jugador* jugador[2];
     jugador[0] = new Jugador(0.0, 0.0, 0.0);
     Contrincante* contrin[4];
-    contrin[0] = new Bowser(30.0, 20.0, 15.0);
-    contrin[1] = new Ganondorf(40.0, 15.0, 10.0, 25.0);
-    contrin[2] = new Sephiroth(60.0, 15.0, 13.0, 22.0, 40.0);
+    contrin[0] = new Bowser(50.0, 20.0, 15.0);
+    contrin[1] = new Ganondorf(70.0, 15.0, 10.0, 25.0);
+    contrin[2] = new Sephiroth(90.0, 15.0, 13.0, 22.0, 40.0);
     string nombreJug, nombreAtaque1, nombreAtaque2;
     cout << "Ingresa el nombre de tu jugador: ";
     cin >> nombreJug;
