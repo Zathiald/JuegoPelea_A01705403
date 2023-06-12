@@ -40,13 +40,13 @@ void Bowser::atacarJugador(string decision, int aJ, Jugador* jugador,Contrincant
 			}
 			else if (turnoContrincante == 1) {
 				if (contrincanteAtaque == 0) {
-					vidaJug = jugador->getvidaJug() - fuerzaCont1;
+					vidaJug = jugador->getvidaJug() - bowser->getfuerzaCont1();
 					jugador->setvidaJug(vidaJug);
 					cout << "BOWSER HA UTILIZADO SU BOLA DE FUEGO, ha pegado con exito, el Rey de los Koopas viene con fuerza" << endl;
 					cout << "La vida de " << jugador->getnombreJug() << " ha bajado, ahora es " << jugador->getvidaJug() << endl;
 				}
 				else if (contrincanteAtaque == 1) {
-					vidaJug = jugador->getvidaJug() - fuerzaCont2;
+					vidaJug = jugador->getvidaJug() - bowser->getfuerzaCont2();
 					jugador->setvidaJug(vidaJug);
 					cout << "BOWSER HA ATACADO CON SU COLA, ha pegado con exito, el Rey de los Koopas viene con fuerza" << endl;
 					cout << "La vida de " << jugador->getnombreJug() << " ha bajado, ahora es " << jugador->getvidaJug() << endl;
@@ -76,7 +76,7 @@ void Bowser::atacarJugador(string decision, int aJ, Jugador* jugador,Contrincant
 			else if (turnoContrincante == 1) {
 				if (contrincanteAtaque == 0) {
 					if (aJ == 1) {
-						vidaJug = jugador->getvidaJug() - (fuerzaCont1 / 2);
+						vidaJug = jugador->getvidaJug() - (bowser->getfuerzaCont1() / 2);
 						jugador->setvidaJug(vidaJug);
 						vidaCont = bowser->getvidaCont() - (jugador->getfuerzaAtaque1() / 2);
 						bowser->setvidaCont(vidaCont);
@@ -86,7 +86,7 @@ void Bowser::atacarJugador(string decision, int aJ, Jugador* jugador,Contrincant
 						cout << "La vida de " << jugador->getnombreJug() << " ahora es: " << jugador->getvidaJug() << endl;
 					}
 					else if (aJ == 2) {
-						vidaJug = jugador->getvidaJug() - (fuerzaCont1 / 2);
+						vidaJug = jugador->getvidaJug() - (bowser->getfuerzaCont1() / 2);
 						jugador->setvidaJug(vidaJug);
 						vidaCont = bowser->getvidaCont() - (jugador->getfuerzaAtaque2() / 2);
 						bowser->setvidaCont(vidaCont);
@@ -98,7 +98,7 @@ void Bowser::atacarJugador(string decision, int aJ, Jugador* jugador,Contrincant
 				}
 				else if (contrincanteAtaque == 1) {
 					if (aJ == 1) {
-						vidaJug = jugador->getvidaJug() - (fuerzaCont2 / 2);
+						vidaJug = jugador->getvidaJug() - (bowser->getfuerzaCont2() / 2);
 						jugador->setvidaJug(vidaJug);
 						vidaCont = bowser->getvidaCont() - (jugador->getfuerzaAtaque1() / 2);
 						bowser->setvidaCont(vidaCont);
@@ -108,7 +108,7 @@ void Bowser::atacarJugador(string decision, int aJ, Jugador* jugador,Contrincant
 						cout << "La vida de " << jugador->getnombreJug() << " ahora es: " << jugador->getvidaJug() << endl;
 					}
 					else if (aJ == 2) {
-						vidaJug = jugador->getvidaJug() - (fuerzaCont2 / 2);
+						vidaJug = jugador->getvidaJug() - (bowser->getfuerzaCont2() / 2);
 						jugador->setvidaJug(vidaJug);
 						vidaCont = bowser->getvidaCont() - (jugador->getfuerzaAtaque2() / 2);
 						bowser->setvidaCont(vidaCont);
@@ -130,14 +130,14 @@ void Bowser::atacarJugador(string decision, int aJ, Jugador* jugador,Contrincant
 			}
 			else if (turnoContrincante == 1) {
 				if (contrincanteAtaque == 0) {
-					vidaJug = jugador->getvidaJug() - fuerzaCont1;
+					vidaJug = jugador->getvidaJug() - bowser->getfuerzaCont1();
 					jugador->setvidaJug(vidaJug);
 					cout << "EL ATAQUE DE " << jugador->getnombreJug() << " HA FALLADO " << endl;
 					cout << "Bowser se rie y ha utilizado una bola de fuego contra " << jugador->getnombreJug() << endl;
 					cout << "La vida de" << jugador->getnombreJug() << " ahora es " << jugador->getvidaJug() << endl;
 				}
 				else if (contrincanteAtaque == 1) {
-					vidaJug = jugador->getvidaJug() - fuerzaCont2;
+					vidaJug = jugador->getvidaJug() - bowser->getfuerzaCont2();
 					jugador->setvidaJug(vidaJug);
 					cout << "EL ATAQUE DE " << jugador->getnombreJug() << " HA FALLADO " << endl;
 					cout << "Bowser se rie y ha atacado con su cola contra " << jugador->getnombreJug() << endl;

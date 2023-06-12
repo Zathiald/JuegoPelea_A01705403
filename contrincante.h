@@ -11,7 +11,6 @@
  */
 
 
-
 #ifndef CONTRINCANTE_H
 #define CONTRINCANTE_H
 #include "jugador.h"//Importo el archivo de jugador para
@@ -22,17 +21,17 @@
 
 using namespace std;
 
-class Jugador;
-
 class Contrincante {
 
-public:
+//Se declaran los atributos privados de la clase
+private:
     float vidaCont;
     float fuerzaCont1;
     float fuerzaCont2;
     float fuerzaCont3;
     float fuerzaCont4;
 
+public:
     Contrincante() {}
 
     Contrincante(float vidaEnem, float fuerzaEnem1, float fuerzaEnem2);
