@@ -32,6 +32,9 @@ El codigo actualmente no compila, hace falta arreglar los problemas con apuntado
 ### 08/06/23 (Avance 4) (Revisión 2)
 El código compila correctamente, pero aún hay un error en la pelea contra Ganondorf, ya que si el usuario va muy rápido no se registran los ataques y además al seleccionar un ataque este se repite muchisimo.
 
+### 14/06/23 (Avance Final) (Revisión 1)
+En esta entrega actual del código no se tienen ningunos errores de compilación, las peleas se conectan correctamente y funcionan los ciclos para si el usuario escoge una opción incorrecta.
+
 # Historial de Revisiones
 
 ### 24/05/23 (Avance 2) (Revisión 1):
@@ -65,6 +68,9 @@ En esta revisión, por el bien del código decidi no agregar clases abstractas, 
 
 ### 08/06/23 (Avance 4) (Revisión 2):
 En esta revisión, ya se implementaron los indicadores correctamente, la clase de Jugador paso a solo ser para constructores y se creo un apuntador dentro del main para que ese mismo valor se vaya actualizando, hay que notar que en la pelea de Ganondorf aún hay un error ya que se imprime muchas veces el mensaje.
+
+### 14/06/23 (Avance Final) (Revisión 1):
+En esta revisión del avance final, se arreglo el error que se tenía al llegar a la pelea final, también se cambio a la clase de Contrincante a una clase abstracta, por último se agregaron comentarios a todas las clases y al main para explicar todas las funciones y como estan construidas las clases, también se balancearon las vidas y fuerzas de los enemigos y del jugador para tener un juego más balanceado
 
 
  
