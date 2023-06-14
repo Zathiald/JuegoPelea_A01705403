@@ -1,19 +1,45 @@
+/*
+ * Proyecto Juego de Peleas
+ * Samir Baidon Pardo
+ * A01705403
+ * 20/05/2023
+ * versio : 4
+ * Esta clase define la clase de Bowser, esta clase hereda
+ * de la clase de Contrincante y sobreescribe unas de sus funciones
+ */
+
 #ifndef BOWSER_H
 #define BOWSER_H
 
 #include <iostream>
 #include <cstdlib>
-#include "contrincante.h"
-#include "jugador.h"
+#include "contrincante.h" //Se incluye la clase de Contrincante
+//para heredar de ella
+
+using namespace std;
 
 class Bowser : public Contrincante {
+
+//Se declaran los métodos públicos
 public:
 	Jugador jugador;
-	void atacarJugador(string decision, int aJ, Jugador* jugador, Contrincante* bowser);
+	void atacarJugador(string decision, int aJ, Jugador* jugador, Contrincante* bowser); //Declaramos de nuevo la función para tener polimorfismo
 	Bowser() {}
 	Bowser(float vidaEnem, float fuerzaEnem1, float fuerzaEnem2) :Contrincante(vidaEnem, fuerzaEnem1, fuerzaEnem2) {}
 };
 
+//Funcion:Alterar la vida de tanto el enemigo como el jugador
+// se tiene sobreescritura al tener un dialogo diferente 
+// 
+//Parametros: Se toma un parametro string para 
+// la decision del jugador, un parametro int para
+// el ataque que decidio usar el jugador, un parametro apuntador
+// para poder evitar que se creen copias del jugador y
+// un parametro apuntador de Contrincante para poder usar el mismo
+// enemigo durante el round
+// 
+//Retorno: Al ser una función void no se regresa algo en sí,solo se 
+//alteran los valores de vida del jugador y el enemigo 
 void Bowser::atacarJugador(string decision, int aJ, Jugador* jugador,Contrincante* bowser) {
 	float vidaJug,vidaCont;
 	int turnoContrincante, defensaChance, contrincanteAtaque, ataqueChance;
@@ -25,7 +51,7 @@ void Bowser::atacarJugador(string decision, int aJ, Jugador* jugador,Contrincant
 		if (defensaChance == 0 || defensaChance == 1 || defensaChance == 2)
 		{
 			if (turnoContrincante == 0) {
-				cout << "EL ATAQUE DE BOWSER HA FALLADO!!, pero " << jugador->getnombreJug() << "solo se estaba defendiendo, SIGUE LA PELEA!!!" << endl;
+				cout << "EL ATAQUE DE BOWSER HA FALLADO!!, pero " << jugador->getnombreJug() << " solo se estaba defendiendo, SIGUE LA PELEA!!!" << endl;
 			}
 			else if (turnoContrincante == 1) {
 				cout << "INCREIBLE DEFENSA CONTRA BOWSER por parte de " << jugador->getnombreJug() << endl;
@@ -36,7 +62,7 @@ void Bowser::atacarJugador(string decision, int aJ, Jugador* jugador,Contrincant
 		}
 		else if (defensaChance == 3) {
 			if (turnoContrincante == 0) {
-				cout << "EL ATAQUE DE BOWSER HA FALLADO!!, pero  la defensa de " << jugador->getnombreJug() << "tambien habia fallado, SIGUE LA PELEA!!!" << endl;
+				cout << "EL ATAQUE DE BOWSER HA FALLADO!!, pero  la defensa de " << jugador->getnombreJug() << " tambien habia fallado, SIGUE LA PELEA!!!" << endl;
 			}
 			else if (turnoContrincante == 1) {
 				if (contrincanteAtaque == 0) {
@@ -53,7 +79,7 @@ void Bowser::atacarJugador(string decision, int aJ, Jugador* jugador,Contrincant
 				}
 			}
 			else if (turnoContrincante == 2) {
-				cout << "La defensa de" << jugador->getnombreJug() << "fallo, pero el enemigo andaba defendiendo...bueno PELIEN" << endl;
+				cout << "La defensa de " << jugador->getnombreJug() << " fallo, pero el enemigo andaba defendiendo...bueno PELIEN" << endl;
 			}
 		}
 	}
@@ -141,7 +167,7 @@ void Bowser::atacarJugador(string decision, int aJ, Jugador* jugador,Contrincant
 					jugador->setvidaJug(vidaJug);
 					cout << "EL ATAQUE DE " << jugador->getnombreJug() << " HA FALLADO " << endl;
 					cout << "Bowser se rie y ha atacado con su cola contra " << jugador->getnombreJug() << endl;
-					cout << "La vida de" << jugador->getnombreJug() << " ahora es " << jugador->getvidaJug() << endl;
+					cout << "La vida de " << jugador->getnombreJug() << " ahora es " << jugador->getvidaJug() << endl;
 				}
 			}
 			else if (turnoContrincante == 2) {

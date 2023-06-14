@@ -1,18 +1,45 @@
+/*
+ * Proyecto Juego de Peleas
+ * Samir Baidon Pardo
+ * A01705403
+ * 20/05/2023
+ * versio : 4
+ * Esta clase define la clase de Ganondorf, esta clase hereda
+ * de la clase de Contrincante y sobreescribe unas de sus funciones
+ */
 #ifndef GANONDORF_H
 #define GANONDORF_H
 
 #include <iostream>
 #include <cstdlib>
-#include "contrincante.h"
-#include "jugador.h"
+#include "contrincante.h" //Se incluye la clase de Contrincante
+//para heredar de ella
+
+
+using namespace std;
 
 class Ganondorf : public Contrincante {
+
+//Se declaran los métodos públicos
 public:
-	void atacarJugador(string decision, int aJ,Jugador* jugador,Contrincante* ganon);
+	void atacarJugador(string decision, int aJ,Jugador* jugador,Contrincante* ganon); //Declaramos de nuevo la función para tener polimorfismo
 	Ganondorf(){}
 	Ganondorf(float vidaEnem, float fuerzaEnem1, float fuerzaEnem2, float fuerzaEnem3):Contrincante(vidaEnem, fuerzaEnem1, fuerzaEnem2,fuerzaEnem3){}
 };
 
+
+//Funcion:Alterar la vida de tanto el enemigo como el jugador
+// se tiene sobreescritura al tener un dialogo diferente 
+// 
+//Parametros: Se toma un parametro string para 
+// la decision del jugador, un parametro int para
+// el ataque que decidio usar el jugador, un parametro apuntador
+// para poder evitar que se creen copias del jugador y
+// un parametro apuntador de Contrincante para poder usar el mismo
+// enemigo durante el round
+// 
+//Retorno: Al ser una función void no se regresa algo en sí,solo se 
+//alteran los valores de vida del jugador y el enemigo 
 void Ganondorf::atacarJugador(string decision, int aJ,Jugador* jugador,Contrincante* ganon) {
 	int turnoContrincante, defensaChance, contrincanteAtaque, ataqueChance;
 	float vidaJug,vidaCont;
@@ -48,13 +75,13 @@ void Ganondorf::atacarJugador(string decision, int aJ,Jugador* jugador,Contrinca
 					vidaJug = jugador->getvidaJug() - ganon->getfuerzaCont2();
 					jugador->setvidaJug(vidaJug);
 					cout << "GANONDORF HA USADO FLAME CHOKE CON EXITO!!!, el rey demonio no va a ser derribado tan faci" << endl;
-					cout << "La vida de" << jugador->getnombreJug() << " ahora es " << jugador->getvidaJug() << endl;
+					cout << "La vida de " << jugador->getnombreJug() << " ahora es " << jugador->getvidaJug() << endl;
 				}
 				else if (contrincanteAtaque == 2) {
 					vidaJug = jugador->getvidaJug() - ganon->getfuerzaCont3();
 					jugador->setvidaJug(vidaJug);
 					cout << "GANONDORF HA USADO VOLCANO KICK CON EXITO!!!, el rey demonio no va a ser derribado tan faci" << endl;
-					cout << "La vida de" << jugador->getnombreJug() << " ahora es " << jugador->getvidaJug() << endl;
+					cout << "La vida de " << jugador->getnombreJug() << " ahora es " << jugador->getvidaJug() << endl;
 				}
 			}
 			else if (turnoContrincante == 2) {
@@ -163,7 +190,7 @@ void Ganondorf::atacarJugador(string decision, int aJ,Jugador* jugador,Contrinca
 					jugador->setvidaJug(vidaJug);
 					cout << "EL ATAQUE DE " << jugador->getnombreJug() << " HA FALLADO" << endl;
 					cout << "Ahora Ganondorf ha rematado con un Warlock Punch, el rey Demonio viene fuerte esta noche!!!!" << endl;
-					cout << "La vida de" << jugador->getnombreJug() << " ahora es " << jugador->getvidaJug() << endl;
+					cout << "La vida de " << jugador->getnombreJug() << " ahora es " << jugador->getvidaJug() << endl;
 				}
 				else if (contrincanteAtaque == 1) {
 					vidaJug = jugador->getvidaJug() - ganon->getfuerzaCont2();

@@ -1,18 +1,44 @@
+/*
+ * Proyecto Juego de Peleas
+ * Samir Baidon Pardo
+ * A01705403
+ * 20/05/2023
+ * versio : 4
+ * Esta clase define la clase de Sephiroth, esta clase hereda
+ * de la clase de Contrincante y sobreescribe unas de sus funciones
+ */
 #ifndef SEPHIROTH_H
 #define SEPHIROTH_H
 
 #include <iostream>
 #include <cstdlib>
-#include "contrincante.h"
-#include "jugador.h"
+#include "contrincante.h" //Se incluye la clase de Contrincante
+//para heredar de ella
+
+
+using namespace std;
 
 class Sephiroth : public Contrincante {
+
+//Se declaran los métodos públicos
 public:
-	void atacarJugador(string decision, int aJ,Jugador* jugador,Contrincante* sephiroth);
+	void atacarJugador(string decision, int aJ,Jugador* jugador,Contrincante* sephiroth); //Declaramos de nuevo la función para tener polimorfismo
 	Sephiroth(){}
 	Sephiroth(float vidaEnem, float fuerzaEnem1, float fuerzaEnem2, float fuerzaEnem3, float fuerzaEnem4) :Contrincante(vidaEnem, fuerzaEnem1, fuerzaEnem2, fuerzaEnem3, fuerzaEnem4) {}
 };
 
+//Funcion:Alterar la vida de tanto el enemigo como el jugador
+// se tiene sobreescritura al tener un dialogo diferente 
+// 
+//Parametros: Se toma un parametro string para 
+// la decision del jugador, un parametro int para
+// el ataque que decidio usar el jugador, un parametro apuntador
+// para poder evitar que se creen copias del jugador y
+// un parametro apuntador de Contrincante para poder usar el mismo
+// enemigo durante el round
+// 
+//Retorno: Al ser una función void no se regresa algo en sí,solo se 
+//alteran los valores de vida del jugador y el enemigo 
 void Sephiroth::atacarJugador(string decision, int aJ,Jugador* jugador,Contrincante* sephiroth) {
 	int turnoContrincante, defensaChance, contrincanteAtaque, ataqueChance;
 	float vidaJug, vidaCont;
@@ -44,25 +70,25 @@ void Sephiroth::atacarJugador(string decision, int aJ,Jugador* jugador,Contrinca
 					vidaJug = jugador->getvidaJug() - sephiroth->getfuerzaCont1();
 					jugador->setvidaJug(vidaJug);
 					cout << "Sephiroth ha usado su mitica Masamune con exito, sonrie al ver a " << jugador->getnombreJug() << " caer" << endl;
-					cout << "La vida de" << jugador->getnombreJug() << " ahora es : " << jugador->getvidaJug() << endl;
+					cout << "La vida de " << jugador->getnombreJug() << " ahora es : " << jugador->getvidaJug() << endl;
 				}
 				else if (contrincanteAtaque == 1) {
 					vidaJug = jugador->getvidaJug() - sephiroth->getfuerzaCont2();
 					jugador->setvidaJug(vidaJug);
 					cout << "Sephiroth ha usado Shadow Flare con exito, sonrie al ver a " << jugador->getnombreJug() << " caer" << endl;
-					cout << "La vida de" << jugador->getnombreJug() << " ahora es : " << jugador->getvidaJug() << endl;
+					cout << "La vida de " << jugador->getnombreJug() << " ahora es : " << jugador->getvidaJug() << endl;
 				}
 				else if (contrincanteAtaque == 2) {
 					vidaJug = jugador->getvidaJug() - sephiroth->getfuerzaCont3();
 					jugador->setvidaJug(vidaJug);
 					cout << "Sephiroth ha usado Octaslash con exito, sonrie al ver a " << jugador->getnombreJug() << " caer" << endl;
-					cout << "La vida de" << jugador->getnombreJug() << " ahora es : " << jugador->getvidaJug() << endl;
+					cout << "La vida de " << jugador->getnombreJug() << " ahora es : " << jugador->getvidaJug() << endl;
 				}
 				else if (contrincanteAtaque == 3) {
 					vidaJug = jugador->getvidaJug() - sephiroth->getfuerzaCont4();
 					jugador->setvidaJug(vidaJug);
 					cout << "Sephiroth ha usado Super Nova con exito, sonrie al ver a " << jugador->getnombreJug() << " caer" << endl;
-					cout << "La vida de" << jugador->getnombreJug() << " ahora es : " << jugador->getvidaJug() << endl;
+					cout << "La vida de " << jugador->getnombreJug() << " ahora es : " << jugador->getvidaJug() << endl;
 				}
 			}
 			else if (turnoContrincante == 2) {
@@ -206,7 +232,7 @@ void Sephiroth::atacarJugador(string decision, int aJ,Jugador* jugador,Contrinca
 					jugador->setvidaJug(vidaJug);
 					cout << "EL ATAQUE DE " << jugador->getnombreJug() << " HA FALLADO" << endl;
 					cout << "Ahora Sephiroth ha rematado con un su Masamune, parece ser que quiere terminar ya esta pelea!!!!" << endl;
-					cout << "La vida de" << jugador->getnombreJug() << " ahora es " << jugador->getvidaJug() << endl;
+					cout << "La vida de " << jugador->getnombreJug() << " ahora es " << jugador->getvidaJug() << endl;
 				}
 				else if (contrincanteAtaque == 1) {
 					float vidaJug;
@@ -214,7 +240,7 @@ void Sephiroth::atacarJugador(string decision, int aJ,Jugador* jugador,Contrinca
 					jugador->setvidaJug(vidaJug);
 					cout << "EL ATAQUE DE " << jugador->getnombreJug() << " HA FALLADO" << endl;
 					cout << "Ahora Sephiroth ha rematado con Shadow Flare, parece ser que quiere terminar ya esta pelea!!!!" << endl;
-					cout << "La vida de" << jugador->getnombreJug() << " ahora es " << jugador->getvidaJug() << endl;
+					cout << "La vida de " << jugador->getnombreJug() << " ahora es " << jugador->getvidaJug() << endl;
 				}
 				else if (contrincanteAtaque == 2) {
 					float vidaJug;
@@ -222,7 +248,7 @@ void Sephiroth::atacarJugador(string decision, int aJ,Jugador* jugador,Contrinca
 					jugador->setvidaJug(vidaJug);
 					cout << "EL ATAQUE DE " << jugador->getnombreJug() << " HA FALLADO" << endl;
 					cout << "Ahora Sephiroth ha rematado con Octaslash, parece ser que quiere terminar ya esta pelea!!!!" << endl;
-					cout << "La vida de" << jugador->getnombreJug() << " ahora es " << jugador->getvidaJug() << endl;
+					cout << "La vida de " << jugador->getnombreJug() << " ahora es " << jugador->getvidaJug() << endl;
 				}
 				else if (contrincanteAtaque == 3) {
 					float vidaJug;
@@ -230,7 +256,7 @@ void Sephiroth::atacarJugador(string decision, int aJ,Jugador* jugador,Contrinca
 					jugador->setvidaJug(vidaJug);
 					cout << "EL ATAQUE DE " << jugador->getnombreJug() << " HA FALLADO" << endl;
 					cout << "Ahora Sephiroth ha rematado con una Super Nova, parece ser que quiere terminar ya esta pelea!!!!" << endl;
-					cout << "La vida de" << jugador->getnombreJug() << " ahora es " << jugador->getvidaJug() << endl;
+					cout << "La vida de " << jugador->getnombreJug() << " ahora es " << jugador->getvidaJug() << endl;
 				}
 			}
 			else if (turnoContrincante == 2) {
