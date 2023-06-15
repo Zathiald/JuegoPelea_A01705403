@@ -72,6 +72,9 @@ En esta revisión, ya se implementaron los indicadores correctamente, la clase d
 ### 14/06/23 (Avance Final) (Revisión 1):
 En esta revisión del avance final, se arreglo el error que se tenía al llegar a la pelea final, también se cambio a la clase de Contrincante a una clase abstracta, por último se agregaron comentarios a todas las clases y al main para explicar todas las funciones y como estan construidas las clases, también se balancearon las vidas y fuerzas de los enemigos y del jugador para tener un juego más balanceado
 
+### 14/06/23 (Avance Final) (Revisión 2):
+En esta revisión se le dio formato a todo el código para que no sobrepase los 68 caracteres y también para que los comentarios tengan el formato correcto.
+
 
  
  
